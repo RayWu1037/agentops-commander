@@ -60,6 +60,8 @@ const finalPack = await readFile(join(root, "FINAL_SUBMISSION_PACK.md"), "utf8")
 const captions = await readFile(join(root, "demo-captions.srt"), "utf8");
 const publicCaptions = await readFile(join(root, "public", "demo-captions.srt"), "utf8");
 const videoQa = await readFile(join(root, "VIDEO_QA_CHECKLIST.md"), "utf8");
+const seedancePrompts = await readFile(join(root, "SEEDANCE_DEMO_PROMPTS.md"), "utf8");
+const seedancePromptPack = await readFile(join(root, "seedance-demo-prompt-pack.txt"), "utf8");
 const gitignore = await readFile(join(root, ".gitignore"), "utf8");
 const strategy = await readFile(join(root, "TEST_STRATEGY.md"), "utf8");
 const ciWorkflow = await readFile(join(root, ".github", "workflows", "ci.yml"), "utf8");
@@ -121,6 +123,7 @@ assert(readme.includes("JUDGES_BRIEF.md"), "README links the judges brief");
 assert(readme.includes("FINAL_SUBMISSION_PACK.md"), "README documents the final submission pack");
 assert(readme.includes("demo-captions.srt"), "README documents demo captions");
 assert(readme.includes("VIDEO_QA_CHECKLIST.md"), "README documents video QA checklist");
+assert(readme.includes("SEEDANCE_DEMO_PROMPTS.md"), "README documents Seedance-style prompts");
 assert(judgesBrief.includes("30-Second Review Path"), "Judges brief has a fast review path");
 assert(judgesBrief.includes("agent-builder-config.json"), "Judges brief points to the Agent Builder contract");
 assert(judgesBrief.includes("Arize Phoenix MCP"), "Judges brief names the partner MCP");
@@ -136,6 +139,7 @@ assert(finalPack.includes("https://raywu1037.github.io/agentops-commander/"), "F
 assert(finalPack.includes("https://raywu1037.github.io/agentops-commander/recording.html"), "Final pack includes recording console URL");
 assert(finalPack.includes("https://github.com/RayWu1037/agentops-commander"), "Final pack includes code repository URL");
 assert(finalPack.includes("https://github.com/RayWu1037/agentops-commander/issues/1"), "Final pack links final submission issue");
+assert(finalPack.includes("SEEDANCE_DEMO_PROMPTS.md"), "Final pack links AI video prompt pack");
 assert(finalPack.includes("public YouTube or Vimeo URL"), "Final pack tracks the required public video URL");
 assert(finalPack.includes("Use English narration or English subtitles"), "Final pack tracks English video requirement");
 assert(finalPack.includes("Keep the video at or under 3 minutes"), "Final pack tracks video length requirement");
@@ -150,6 +154,12 @@ assert(videoQa.includes("Target length: 2:45 to 2:58"), "Video QA checklist defi
 assert(videoQa.includes("recording.html"), "Video QA checklist links the recording console");
 assert(videoQa.includes("Architecture tab"), "Video QA checklist requires Architecture tab shot");
 assert(videoQa.includes("YouTube or Vimeo"), "Video QA checklist tracks required upload platforms");
+assert(videoQa.includes("Seedance-style AI clips"), "Video QA checklist warns about AI clip scope");
+assert(seedancePrompts.includes("Use AI-generated clips only as a short intro"), "Seedance prompt docs keep real demo primary");
+assert(seedancePrompts.includes("SEEDANCE") || seedancePrompts.includes("Seedance"), "Seedance prompt docs name the AI video workflow");
+assert(seedancePrompts.includes("Negative Prompt"), "Seedance prompt docs include a negative prompt");
+assert(seedancePromptPack.includes("INTRO CLIP PROMPT"), "Plain prompt pack includes intro prompt");
+assert(seedancePromptPack.includes("The main Devpost demo must show the real hosted app"), "Plain prompt pack keeps hosted app as primary demo");
 assert(strategy.includes("OWASP"), "Test strategy references OWASP security testing");
 assert(strategy.includes("WCAG 2.2"), "Test strategy references WCAG accessibility testing");
 assert(ciWorkflow.includes("node scripts/test.mjs"), "CI workflow runs regression tests");
@@ -164,6 +174,7 @@ assert(checklist.includes("[x] Add demo captions and video QA checklist"), "Cham
 assert(checklist.includes("[x] Confirm GitHub repo homepage and topics are set"), "Championship checklist records GitHub metadata verification");
 assert(checklist.includes("[x] Add hosted recording console for video capture"), "Championship checklist records recording console completion");
 assert(checklist.includes("[x] Create GitHub final submission checklist issue"), "Championship checklist records final issue creation");
+assert(checklist.includes("[x] Add Seedance-style AI demo prompt pack"), "Championship checklist records AI prompt pack completion");
 assert(checklist.includes("Record and upload public demo video"), "Championship checklist tracks demo video requirement");
 assert(agentConfig.agent.googleCloud.agentBuilder.includes("agent goal"), "Agent config defines Agent Builder contract");
 assert(agentConfig.agent.googleCloud.geminiModel.includes("gemini"), "Agent config selects a Gemini model target");
@@ -246,6 +257,8 @@ for (const required of [
   "DEMO_SCRIPT.md",
   "demo-captions.srt",
   "VIDEO_QA_CHECKLIST.md",
+  "SEEDANCE_DEMO_PROMPTS.md",
+  "seedance-demo-prompt-pack.txt",
   "DEVPOST_SUBMISSION.md",
   "FINAL_SUBMISSION_PACK.md",
   "SUBMISSION_AUDIT.md",

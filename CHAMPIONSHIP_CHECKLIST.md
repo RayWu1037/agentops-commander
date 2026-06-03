@@ -23,6 +23,7 @@ This is the practical bar for turning AgentOps Commander from a strong prototype
 - [x] Confirm GitHub repo homepage and topics are set
 - [x] Add hosted recording console for video capture
 - [x] Create GitHub final submission checklist issue
+- [x] Add Seedance-style AI demo prompt pack
 - [ ] Record and upload public demo video under 3 minutes
 - [ ] Add final hosted demo URL and video URL to Devpost
 

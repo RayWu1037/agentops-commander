@@ -10,6 +10,7 @@ Use this file as the copy/paste source for the final Devpost submission.
 - Demo video URL: `TODO: add public YouTube or Vimeo URL`
 - Partner track: Arize
 - Final external checklist issue: https://github.com/RayWu1037/agentops-commander/issues/1
+- Optional AI video prompt pack: `SEEDANCE_DEMO_PROMPTS.md`
 
 ## Project Name
 
@@ -70,6 +71,7 @@ The repository includes a concrete `agent-builder-config.json` contract for Gemi
 - Update final checklist issue #1 after the video URL and Devpost fields are saved.
 - Upload `project-gallery.png` as the project gallery image.
 - Upload or verify English captions using `demo-captions.srt`.
+- If using Seedance-style AI clips, keep them as intro/transition/outro only; the main video must show the real hosted app.
 - Use the tagline, built-with list, and submission description above.
 - Verify the repository is public and has `LICENSE` visible.
 - Verify GitHub repository homepage points to the hosted demo and topics include `google-cloud`, `gemini`, `agent-builder`, `arize`, and `mcp`.

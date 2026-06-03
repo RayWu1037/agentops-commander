@@ -90,6 +90,7 @@ The front end can run directly from `public/index.html`. If the API is unavailab
 - `project-gallery.png` is a 3:2 image suitable for the Devpost image gallery.
 - `public/recording.html` is a hosted video recording console.
 - `public/demo-captions.srt` is the hosted caption file linked from the recording console.
+- `SEEDANCE_DEMO_PROMPTS.md` and `seedance-demo-prompt-pack.txt` contain optional AI video prompts for intro/outro clips.
 - `JUDGES_BRIEF.md` contains the fastest judging path through the demo and repository.
 - `DEMO_SCRIPT.md` contains the three-minute video narration.
 - `demo-captions.srt` contains upload-ready English captions for the demo video.

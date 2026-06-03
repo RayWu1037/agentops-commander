@@ -32,6 +32,7 @@ Use this immediately before uploading the public Devpost demo video.
 - The video is public or unlisted, not private.
 - The video is uploaded to YouTube or Vimeo.
 - The video contains no copyrighted music, stock video, unrelated logos, personal data, or third-party ads.
+- If Seedance-style AI clips are used, they are intro/transition/outro only and do not replace the real hosted app walkthrough.
 - The video shows the web project functioning, not only slides or screenshots.
 - The narration mentions Arize/Phoenix MCP and the human approval gate.
 - The narration mentions Gemini and Google Cloud Agent Builder.

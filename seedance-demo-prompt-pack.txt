@@ -1,0 +1,17 @@
+GLOBAL STYLE PROMPT
+Create a polished product-demo visual for an enterprise AI incident response agent called AgentOps Commander. The visual style is clean, modern, operational, and trustworthy: Google Cloud-inspired infrastructure, real-time observability traces, approval gates, and human-supervised automation. Use restrained colors, crisp dashboard lighting, realistic monitors, and no cartoon characters. The mood is confident and production-ready, not futuristic fantasy.
+
+INTRO CLIP PROMPT
+8-second cinematic product intro. A modern operations room during a checkout incident. Dashboards show failed orders rising, then an AI agent interface named AgentOps Commander appears. The agent creates a plan, calls tools, and pauses at a clear human approval gate. Subtle Google Cloud-style infrastructure lines connect services. Arize Phoenix-style traces appear as clean timeline spans. Text overlay: "Observable agents that take approved action." Clean enterprise design, realistic UI, no logos except the product name AgentOps Commander, no people close-ups, no copyrighted marks.
+
+TRANSITION CLIP PROMPT
+5-second transition from incident chaos to controlled resolution. Metrics stabilize as a human approval checkpoint turns from Pending to Approved. Tool-call cards and trace spans animate into a clean audit trail. Text overlay: "Plan -> Tools -> Approval -> Trace -> Improve." Modern SaaS product aesthetic, high clarity, restrained motion, no unrelated icons, no ads, no third-party logos.
+
+CLOSING CLIP PROMPT
+10-second closing visual for AgentOps Commander. Show a clean agent workflow diagram: Goal, Gemini plan, tools, human approval, Arize Phoenix MCP trace review, evaluation scores, next-run improvement. Text overlay: "Human-supervised. Observable. Evaluated." End card includes: "AgentOps Commander" and "Google Cloud Rapid Agent Hackathon". Enterprise dashboard style, readable text, no stock footage, no copyrighted media.
+
+NEGATIVE PROMPT
+Avoid: cartoon mascots, fantasy robots, unreadable UI text, unrelated people, cyberpunk clutter, dark blurry dashboards, third-party logos, copyrighted music references, ads, social media interfaces, fake YouTube pages, medical or legal claims, weapons, private customer data, or any brand marks other than AgentOps Commander.
+
+EDITING RULE
+Use AI-generated clips only as a short intro, transition, or closing visual. The main Devpost demo must show the real hosted app running at https://raywu1037.github.io/agentops-commander/.
