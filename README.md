@@ -2,6 +2,10 @@
 
 AgentOps Commander is a Gemini-ready, human-supervised incident response agent demo for the Google Cloud Rapid Agent Hackathon.
 
+Repository: https://github.com/RayWu1037/agentops-commander
+
+Planned hosted demo: https://raywu1037.github.io/agentops-commander/
+
 The demo shows the loop the submission will emphasize:
 
 1. Receive a real-world operations incident.
@@ -38,6 +42,16 @@ public/index.html
 
 No API keys are required for the demo mode. The backend returns deterministic agent runs so the demo is reliable for recording.
 
+## Quality gate
+
+```bash
+node scripts/test.mjs
+```
+
+The current suite covers security headers, path traversal payloads, HTTP verb tampering, malformed requests, XSS-shaped payload escaping, offline fallback, accessibility metadata, mobile layout risks, submission assets, and the agent approval flow.
+
+GitHub Actions runs the same checks on push and pull requests. A Pages workflow deploys the static demo from `public/`.
+
 ## Offline demo mode
 
 The front end can run directly from `public/index.html`. If the API is unavailable, the app automatically falls back to deterministic client-side data, so the demo flow still works for recording and review.
@@ -48,6 +62,8 @@ The front end can run directly from `public/index.html`. If the API is unavailab
 - `DEMO_SCRIPT.md` contains the three-minute video narration.
 - `DEVPOST_SUBMISSION.md` contains copy-ready Devpost text.
 - `TESTING.md` contains the regression checklist.
+- `.github/workflows/ci.yml` runs the quality gate.
+- `.github/workflows/pages.yml` deploys the static demo to GitHub Pages.
 
 ## Google Cloud and Gemini integration plan
 

@@ -12,6 +12,11 @@ A Gemini-powered agent that investigates incidents, takes approved actions, and 
 
 Gemini, Google Cloud, Cloud Run, Google Agent Builder, Python, FastAPI, React, Arize Phoenix, Phoenix MCP, OpenInference, OpenTelemetry, Firestore, Secret Manager
 
+## Links
+
+- Code: https://github.com/RayWu1037/agentops-commander
+- Planned demo: https://raywu1037.github.io/agentops-commander/
+
 ## About the project
 
 ### Inspiration
@@ -31,6 +36,8 @@ The key feature is the self-improvement loop. Every agent step is traced with Ar
 The demo is a code-owned agent runtime with a web dashboard. The current build includes deterministic demo mode for reliable judging and recording, plus integration points for Gemini, Google Cloud Run, Arize Phoenix, OpenInference, and Phoenix MCP.
 
 The UI shows the operational incident, the agent plan, tool calls, evidence, approval gate, execution result, trace timeline, evaluation scores, and self-review recommendations.
+
+The repository includes a 101-check regression suite based on OWASP, WCAG, MDN, and web.dev guidance. It covers security headers, path traversal payloads, HTTP verb tampering, malformed requests, XSS-shaped payload escaping, offline fallback, accessibility metadata, mobile layout risks, and the agent approval flow.
 
 ### Challenges we ran into
 

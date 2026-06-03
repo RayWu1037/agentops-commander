@@ -55,6 +55,9 @@ const readme = await readFile(join(root, "README.md"), "utf8");
 const devpost = await readFile(join(root, "DEVPOST_SUBMISSION.md"), "utf8");
 const gitignore = await readFile(join(root, ".gitignore"), "utf8");
 const strategy = await readFile(join(root, "TEST_STRATEGY.md"), "utf8");
+const ciWorkflow = await readFile(join(root, ".github", "workflows", "ci.yml"), "utf8");
+const pagesWorkflow = await readFile(join(root, ".github", "workflows", "pages.yml"), "utf8");
+const checklist = await readFile(join(root, "CHAMPIONSHIP_CHECKLIST.md"), "utf8");
 
 assert(html.includes('href="styles.css"'), "HTML uses relative stylesheet path for file:// compatibility");
 assert(html.includes('src="app.js"'), "HTML uses relative script path for file:// compatibility");
@@ -85,10 +88,16 @@ assert(!/letter-spacing:\s*-/.test(css), "CSS avoids negative letter spacing");
 assert(!/(https?:)?\/\//.test(css), "CSS avoids external runtime dependencies");
 assert(!/(https?:)?\/\//.test(app), "App script avoids external runtime dependencies");
 assert(readme.includes("Offline demo mode"), "README documents offline demo mode");
+assert(readme.includes("https://github.com/RayWu1037/agentops-commander"), "README links the public repository");
+assert(readme.includes("https://raywu1037.github.io/agentops-commander/"), "README includes planned hosted demo URL");
 assert(devpost.includes("Arize Phoenix"), "Devpost copy emphasizes Arize Phoenix");
 assert(devpost.includes("Gemini"), "Devpost copy emphasizes Gemini");
+assert(devpost.includes("https://github.com/RayWu1037/agentops-commander"), "Devpost copy includes GitHub repository link");
 assert(strategy.includes("OWASP"), "Test strategy references OWASP security testing");
 assert(strategy.includes("WCAG 2.2"), "Test strategy references WCAG accessibility testing");
+assert(ciWorkflow.includes("node scripts/test.mjs"), "CI workflow runs regression tests");
+assert(pagesWorkflow.includes("actions/deploy-pages"), "Pages workflow deploys the static demo");
+assert(checklist.includes("Record and upload public demo video"), "Championship checklist tracks demo video requirement");
 assert(gitignore.includes("*.log"), "Git ignore excludes logs");
 assert(gitignore.includes("verification-*.png"), "Git ignore excludes verification screenshots");
 
@@ -158,6 +167,9 @@ for (const required of [
   "DEMO_SCRIPT.md",
   "DEVPOST_SUBMISSION.md",
   "TESTING.md",
+  "CHAMPIONSHIP_CHECKLIST.md",
+  ".github/workflows/ci.yml",
+  ".github/workflows/pages.yml",
   "project-gallery.png"
 ]) {
   assert((await stat(join(root, required))).isFile(), `${required} exists`);
