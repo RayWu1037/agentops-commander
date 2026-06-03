@@ -1,0 +1,6 @@
+node_modules/
+.env
+*.log
+verification-*.png
+.DS_Store
+Thumbs.db

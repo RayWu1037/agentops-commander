@@ -1,0 +1,16 @@
+{
+  "name": "agentops-commander",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Gemini-ready incident response agent demo for the Google Cloud Rapid Agent Hackathon.",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "check": "node --check server.js && node --check public/app.js",
+    "test": "node scripts/test.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

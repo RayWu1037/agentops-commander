@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AgentOps Commander</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-mark">A</div>
+          <div>
+            <h1>AgentOps Commander</h1>
+            <p>Human-supervised incident agent</p>
+          </div>
+        </div>
+
+        <nav class="nav-list" aria-label="Main">
+          <button class="nav-item is-active" type="button" data-view="incident" aria-controls="incidentView" aria-selected="true">
+            <span>Incident</span>
+          </button>
+          <button class="nav-item" type="button" data-view="trace" aria-controls="traceView" aria-selected="false">
+            <span>Trace</span>
+          </button>
+          <button class="nav-item" type="button" data-view="evals" aria-controls="evalsView" aria-selected="false">
+            <span>Evals</span>
+          </button>
+        </nav>
+
+        <div class="system-card">
+          <span class="label">Runtime</span>
+          <strong>Gemini-ready agent loop</strong>
+          <p>Demo mode runs locally. Set API keys to replace simulated reasoning with live Gemini and Phoenix.</p>
+        </div>
+      </aside>
+
+      <main class="main">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Google Cloud Rapid Agent Hackathon</p>
+            <h2>Observable agents that take approved action</h2>
+          </div>
+          <div class="topbar-actions">
+            <select id="incidentSelect" aria-label="Incident scenario"></select>
+            <button id="runAgent" class="primary-button" type="button">Run agent</button>
+          </div>
+        </header>
+
+        <section class="status-grid">
+          <article class="metric">
+            <span>Failed orders</span>
+            <strong id="metricOne">--</strong>
+          </article>
+          <article class="metric">
+            <span>p95 checkout</span>
+            <strong id="metricTwo">--</strong>
+          </article>
+          <article class="metric">
+            <span>Safety gate</span>
+            <strong id="metricSafety">Required</strong>
+          </article>
+          <article class="metric">
+            <span>Trace status</span>
+            <strong id="metricTrace">Ready</strong>
+          </article>
+        </section>
+
+        <section class="view is-visible" id="incidentView" tabindex="-1">
+          <div class="split-layout">
+            <article class="panel">
+              <div class="panel-heading">
+                <div>
+                  <p class="eyebrow">Current incident</p>
+                  <h3 id="incidentTitle">Select a scenario</h3>
+                </div>
+                <span class="severity" id="severity">--</span>
+              </div>
+              <p id="incidentSignal" class="signal"></p>
+              <p id="incidentImpact" class="muted"></p>
+              <div class="goal-box">
+                <span class="label">Agent goal</span>
+                <p id="incidentGoal"></p>
+              </div>
+            </article>
+
+            <article class="panel visual-panel">
+              <canvas id="traceCanvas" width="640" height="360" aria-label="Agent trace visualization"></canvas>
+            </article>
+          </div>
+
+          <div class="workflow">
+            <article class="panel">
+              <div class="panel-heading">
+                <h3>Plan</h3>
+                <span id="planState" class="state-pill">Waiting</span>
+              </div>
+              <ol id="planList" class="ordered-list"></ol>
+            </article>
+
+            <article class="panel">
+              <div class="panel-heading">
+                <h3>Tool calls</h3>
+                <span id="toolState" class="state-pill">Waiting</span>
+              </div>
+              <div id="toolList" class="tool-list"></div>
+            </article>
+          </div>
+
+          <article class="panel action-panel">
+            <div>
+              <p class="eyebrow">Root cause</p>
+              <h3 id="rootCause">Run the agent to investigate.</h3>
+              <p id="proposedAction" class="muted"></p>
+            </div>
+            <button id="approveAction" class="secondary-button" type="button" disabled>Approve action</button>
+          </article>
+
+          <article class="panel execution-panel is-hidden" id="executionPanel">
+            <span class="label">Execution result</span>
+            <p id="executionResult"></p>
+          </article>
+        </section>
+
+        <section class="view" id="traceView" tabindex="-1">
+          <article class="panel">
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">Phoenix-style observability</p>
+                <h3>Trace timeline</h3>
+              </div>
+              <span class="state-pill">OpenInference spans</span>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Span</th>
+                    <th>Tool</th>
+                    <th>Latency</th>
+                    <th>Tokens</th>
+                    <th>Eval</th>
+                  </tr>
+                </thead>
+                <tbody id="traceRows"></tbody>
+              </table>
+            </div>
+          </article>
+        </section>
+
+        <section class="view" id="evalsView" tabindex="-1">
+          <div class="eval-grid">
+            <article class="panel">
+              <div class="panel-heading">
+                <h3>Evaluation scores</h3>
+                <span class="state-pill">Demo run</span>
+              </div>
+              <div id="evalList" class="eval-list"></div>
+            </article>
+
+            <article class="panel">
+              <div class="panel-heading">
+                <h3>Self-review loop</h3>
+                <span class="state-pill">Phoenix MCP</span>
+              </div>
+              <ul id="selfReview" class="review-list"></ul>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
