@@ -1,0 +1,55 @@
+1
+00:00:00,000 --> 00:00:08,000
+This is AgentOps Commander, a human-supervised incident response agent for real-world operations teams.
+
+2
+00:00:08,000 --> 00:00:20,000
+Most agents can answer questions. This one is designed as a Gemini and Google Cloud Agent Builder workflow: it plans, investigates, asks for approval, acts, and reviews its Arize Phoenix traces.
+
+3
+00:00:20,000 --> 00:00:33,000
+The current incident is a World Cup merchandise launch. Failed orders jumped from 1.8 percent to 11.6 percent in 22 minutes.
+
+4
+00:00:33,000 --> 00:00:45,000
+Customers with international shipping addresses are stuck at checkout. The goal is to find the likely cause and propose a safe mitigation before the promo window closes.
+
+5
+00:00:45,000 --> 00:00:56,000
+I run the agent. It creates a plan with an explicit safety boundary, then calls tools to compare order metrics, inspect deployments, search logs, and review Phoenix-style traces.
+
+6
+00:00:56,000 --> 00:01:25,000
+The key point is that the agent is not guessing. It builds an evidence path before recommending action.
+
+7
+00:01:25,000 --> 00:01:42,000
+The agent finds that failures are concentrated in cross-border express shipping orders and links the spike to a configuration change that lowered the shipping quote timeout from 6 seconds to 900 milliseconds.
+
+8
+00:01:42,000 --> 00:01:55,000
+It proposes a mitigation: restore the safer timeout, enable cached fallback quotes, and notify support with affected order IDs.
+
+9
+00:01:55,000 --> 00:02:09,000
+The action changes operational state, so the agent cannot execute it by itself. I approve the action.
+
+10
+00:02:09,000 --> 00:02:20,000
+The safety gate changes from pending to approved, and the execution result is recorded.
+
+11
+00:02:20,000 --> 00:02:32,000
+Now I switch to the trace view. Each tool call is represented as a span with latency, token use, and an evaluation result.
+
+12
+00:02:32,000 --> 00:02:45,000
+Then I switch to evaluations. The agent is scored for task success, evidence coverage, action safety, and self-improvement.
+
+13
+00:02:45,000 --> 00:02:54,000
+The self-review loop is the differentiator. Using Arize Phoenix and Phoenix MCP, the agent can review weak traces and improve its next run.
+
+14
+00:02:54,000 --> 00:03:00,000
+AgentOps Commander is an observable, evaluated, human-supervised agent that can safely get real work done.

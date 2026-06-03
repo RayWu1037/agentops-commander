@@ -39,6 +39,10 @@ select {
   min-height: 100dvh;
 }
 
+.recording-shell {
+  grid-template-columns: 300px minmax(0, 1fr);
+}
+
 .sidebar {
   display: flex;
   flex-direction: column;
@@ -198,6 +202,18 @@ select {
   color: #fff;
 }
 
+.primary-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 42px;
+  border: 1px solid var(--accent);
+  padding: 0 14px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 800;
+  text-decoration: none;
+}
+
 .secondary-button {
   border-color: var(--accent);
   color: var(--accent-strong);
@@ -212,7 +228,8 @@ select {
 .status-grid,
 .workflow,
 .eval-grid,
-.architecture-grid {
+.architecture-grid,
+.recording-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 12px;
@@ -406,6 +423,15 @@ th {
   gap: 18px;
 }
 
+.recording-grid {
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: 18px;
+}
+
+.recording-grid .panel:first-child {
+  grid-row: span 2;
+}
+
 .architecture-grid .panel:first-child {
   grid-row: span 2;
 }
@@ -475,10 +501,16 @@ th {
   .workflow,
   .eval-grid,
   .architecture-grid,
+  .recording-grid,
   .status-grid {
     grid-template-columns: 1fr 1fr;
   }
 
+  .recording-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .recording-grid .panel:first-child,
   .architecture-grid .panel:first-child {
     grid-column: 1 / -1;
     grid-row: auto;
@@ -511,10 +543,12 @@ th {
   .workflow,
   .eval-grid,
   .architecture-grid,
+  .recording-grid,
   .status-grid {
     grid-template-columns: 1fr;
   }
 
+  .recording-grid .panel:first-child,
   .architecture-grid .panel:first-child {
     grid-column: auto;
   }

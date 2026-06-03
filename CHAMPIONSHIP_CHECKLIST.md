@@ -21,6 +21,7 @@ This is the practical bar for turning AgentOps Commander from a strong prototype
 - [x] Add demo captions and video QA checklist
 - [x] Add judge quickstart and repository review brief
 - [x] Confirm GitHub repo homepage and topics are set
+- [x] Add hosted recording console for video capture
 - [ ] Record and upload public demo video under 3 minutes
 - [ ] Add final hosted demo URL and video URL to Devpost
 

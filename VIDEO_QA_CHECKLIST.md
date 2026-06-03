@@ -5,6 +5,7 @@ Use this immediately before uploading the public Devpost demo video.
 ## Recording Setup
 
 - Record the hosted demo URL: https://raywu1037.github.io/agentops-commander/
+- Use the recording console before capture: https://raywu1037.github.io/agentops-commander/recording.html
 - Target length: 2:45 to 2:58.
 - Absolute maximum length: 3:00.
 - Resolution: 1920x1080 or 1280x720.

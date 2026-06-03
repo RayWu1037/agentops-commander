@@ -5,6 +5,7 @@ Use this file as the copy/paste source for the final Devpost submission.
 ## Required Links
 
 - Hosted demo URL: https://raywu1037.github.io/agentops-commander/
+- Recording console: https://raywu1037.github.io/agentops-commander/recording.html
 - Code repository: https://github.com/RayWu1037/agentops-commander
 - Demo video URL: `TODO: add public YouTube or Vimeo URL`
 - Partner track: Arize
@@ -38,6 +39,7 @@ The repository includes a concrete `agent-builder-config.json` contract for Gemi
 ## What To Show In The Video
 
 1. Open the hosted demo URL.
+   Optional prep page: https://raywu1037.github.io/agentops-commander/recording.html
 2. Show the incident metrics and operational goal.
 3. Click `Run agent`.
 4. Show the plan, tool calls, evidence, and root cause.

@@ -6,6 +6,8 @@ Repository: https://github.com/RayWu1037/agentops-commander
 
 Hosted demo: https://raywu1037.github.io/agentops-commander/
 
+Recording console: https://raywu1037.github.io/agentops-commander/recording.html
+
 ## Judge Quickstart
 
 1. Open the hosted demo.
@@ -69,6 +71,8 @@ The front end can run directly from `public/index.html`. If the API is unavailab
 ## Submission assets
 
 - `project-gallery.png` is a 3:2 image suitable for the Devpost image gallery.
+- `public/recording.html` is a hosted video recording console.
+- `public/demo-captions.srt` is the hosted caption file linked from the recording console.
 - `JUDGES_BRIEF.md` contains the fastest judging path through the demo and repository.
 - `DEMO_SCRIPT.md` contains the three-minute video narration.
 - `demo-captions.srt` contains upload-ready English captions for the demo video.

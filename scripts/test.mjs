@@ -49,6 +49,7 @@ function rawRequest(method, path) {
 }
 
 const html = await readFile(join(root, "public", "index.html"), "utf8");
+const recordingHtml = await readFile(join(root, "public", "recording.html"), "utf8");
 const app = await readFile(join(root, "public", "app.js"), "utf8");
 const css = await readFile(join(root, "public", "styles.css"), "utf8");
 const readme = await readFile(join(root, "README.md"), "utf8");
@@ -57,6 +58,7 @@ const devpost = await readFile(join(root, "DEVPOST_SUBMISSION.md"), "utf8");
 const demoScript = await readFile(join(root, "DEMO_SCRIPT.md"), "utf8");
 const finalPack = await readFile(join(root, "FINAL_SUBMISSION_PACK.md"), "utf8");
 const captions = await readFile(join(root, "demo-captions.srt"), "utf8");
+const publicCaptions = await readFile(join(root, "public", "demo-captions.srt"), "utf8");
 const videoQa = await readFile(join(root, "VIDEO_QA_CHECKLIST.md"), "utf8");
 const gitignore = await readFile(join(root, ".gitignore"), "utf8");
 const strategy = await readFile(join(root, "TEST_STRATEGY.md"), "utf8");
@@ -66,6 +68,13 @@ const checklist = await readFile(join(root, "CHAMPIONSHIP_CHECKLIST.md"), "utf8"
 const agentConfig = JSON.parse(await readFile(join(root, "agent-builder-config.json"), "utf8"));
 
 assert(html.includes('href="styles.css"'), "HTML uses relative stylesheet path for file:// compatibility");
+assert(recordingHtml.includes('href="styles.css"'), "Recording console uses relative stylesheet path");
+assert(recordingHtml.includes('href="index.html"'), "Recording console links back to the demo");
+assert(recordingHtml.includes('href="demo-captions.srt"'), "Recording console links to deployed captions");
+assert(!/\son[a-z]+\s*=/.test(recordingHtml), "Recording console avoids inline event handlers");
+assert(recordingHtml.includes("Record the winning demo in one pass"), "Recording console has a video prep headline");
+assert(recordingHtml.includes("YouTube or Vimeo"), "Recording console tracks required upload platforms");
+assert(recordingHtml.includes("Arize Phoenix MCP"), "Recording console includes partner MCP narration beat");
 assert(html.includes('src="app.js"'), "HTML uses relative script path for file:// compatibility");
 assert(!html.includes('type="module"'), "HTML avoids module script so file:// demo mode is robust");
 assert(html.includes('lang="en"'), "HTML declares page language");
@@ -98,6 +107,8 @@ assert(!/(https?:)?\/\//.test(app), "App script avoids external runtime dependen
 assert(readme.includes("Offline demo mode"), "README documents offline demo mode");
 assert(readme.includes("https://github.com/RayWu1037/agentops-commander"), "README links the public repository");
 assert(readme.includes("Hosted demo: https://raywu1037.github.io/agentops-commander/"), "README includes hosted demo URL");
+assert(readme.includes("recording.html"), "README links the hosted recording console");
+assert(readme.includes("public/demo-captions.srt"), "README documents hosted caption file");
 assert(readme.includes("Judge Quickstart"), "README includes judge quickstart");
 assert(readme.includes("JUDGES_BRIEF.md"), "README links the judges brief");
 assert(readme.includes("FINAL_SUBMISSION_PACK.md"), "README documents the final submission pack");
@@ -115,6 +126,7 @@ assert(demoScript.includes("Google Cloud Agent Builder"), "Demo script names the
 assert(demoScript.includes("Arize Phoenix traces"), "Demo script names the partner trace loop");
 assert(finalPack.includes("Partner track: Arize"), "Final pack selects the Arize partner track");
 assert(finalPack.includes("https://raywu1037.github.io/agentops-commander/"), "Final pack includes hosted demo URL");
+assert(finalPack.includes("https://raywu1037.github.io/agentops-commander/recording.html"), "Final pack includes recording console URL");
 assert(finalPack.includes("https://github.com/RayWu1037/agentops-commander"), "Final pack includes code repository URL");
 assert(finalPack.includes("public YouTube or Vimeo URL"), "Final pack tracks the required public video URL");
 assert(finalPack.includes("Use English narration or English subtitles"), "Final pack tracks English video requirement");
@@ -122,10 +134,12 @@ assert(finalPack.includes("Keep the video at or under 3 minutes"), "Final pack t
 assert(finalPack.includes("demo-captions.srt"), "Final pack references the caption file");
 assert(finalPack.includes("google-cloud"), "Final pack tracks GitHub topic verification");
 assert(captions.includes("00:00:00,000 --> 00:00:08,000"), "Caption file uses SRT timestamps");
+assert(publicCaptions === captions, "Hosted caption file matches repository caption file");
 assert(captions.includes("Gemini and Google Cloud Agent Builder"), "Caption file mentions Gemini and Agent Builder");
 assert(captions.includes("Arize Phoenix and Phoenix MCP"), "Caption file mentions Arize Phoenix MCP");
 assert(captions.includes("00:02:54,000 --> 00:03:00,000"), "Caption file stays within the three-minute limit");
 assert(videoQa.includes("Target length: 2:45 to 2:58"), "Video QA checklist defines target duration");
+assert(videoQa.includes("recording.html"), "Video QA checklist links the recording console");
 assert(videoQa.includes("Architecture tab"), "Video QA checklist requires Architecture tab shot");
 assert(videoQa.includes("YouTube or Vimeo"), "Video QA checklist tracks required upload platforms");
 assert(strategy.includes("OWASP"), "Test strategy references OWASP security testing");
@@ -137,6 +151,7 @@ assert(checklist.includes("[x] Confirm GitHub Pages is enabled"), "Championship 
 assert(checklist.includes("[x] Add final Devpost submission pack"), "Championship checklist records final pack completion");
 assert(checklist.includes("[x] Add demo captions and video QA checklist"), "Championship checklist records video prep assets");
 assert(checklist.includes("[x] Confirm GitHub repo homepage and topics are set"), "Championship checklist records GitHub metadata verification");
+assert(checklist.includes("[x] Add hosted recording console for video capture"), "Championship checklist records recording console completion");
 assert(checklist.includes("Record and upload public demo video"), "Championship checklist tracks demo video requirement");
 assert(agentConfig.agent.googleCloud.agentBuilder.includes("agent goal"), "Agent config defines Agent Builder contract");
 assert(agentConfig.agent.googleCloud.geminiModel.includes("gemini"), "Agent config selects a Gemini model target");
@@ -213,6 +228,8 @@ assert(escapedXss.every((payload) => !payload.includes("<script") && !payload.in
 for (const required of [
   "LICENSE",
   "Dockerfile",
+  "public/recording.html",
+  "public/demo-captions.srt",
   "JUDGES_BRIEF.md",
   "DEMO_SCRIPT.md",
   "demo-captions.srt",
@@ -256,6 +273,14 @@ try {
   assert(home.headers.get("referrer-policy") === "no-referrer", "Static responses set Referrer-Policy");
   assert(Boolean(home.headers.get("content-security-policy")), "Static responses set Content-Security-Policy");
   assert((await home.text()).includes("AgentOps Commander"), "Home page contains product name");
+
+  const recording = await fetch(`${base}/recording.html`);
+  assert(recording.ok, "Recording console responds over HTTP");
+  assert((await recording.text()).includes("Record the winning demo"), "Recording console contains recording headline");
+
+  const captionFile = await fetch(`${base}/demo-captions.srt`);
+  assert(captionFile.ok, "Hosted caption file responds over HTTP");
+  assert((await captionFile.text()).includes("00:02:54,000 --> 00:03:00,000"), "Hosted caption file stays within three minutes");
 
   const styles = await fetch(`${base}/styles.css`);
   assert(styles.ok, "Stylesheet responds over HTTP");
