@@ -27,6 +27,9 @@
           <button class="nav-item" type="button" data-view="evals" aria-controls="evalsView" aria-selected="false">
             <span>Evals</span>
           </button>
+          <button class="nav-item" type="button" data-view="architecture" aria-controls="architectureView" aria-selected="false">
+            <span>Architecture</span>
+          </button>
         </nav>
 
         <div class="system-card">
@@ -165,6 +168,55 @@
                 <span class="state-pill">Phoenix MCP</span>
               </div>
               <ul id="selfReview" class="review-list"></ul>
+            </article>
+          </div>
+        </section>
+
+        <section class="view" id="architectureView" tabindex="-1">
+          <div class="architecture-grid">
+            <article class="panel">
+              <div class="panel-heading">
+                <div>
+                  <p class="eyebrow">Agent Builder contract</p>
+                  <h3>Gemini + Google Cloud runtime</h3>
+                </div>
+                <span class="state-pill">Cloud Run ready</span>
+              </div>
+              <div class="architecture-flow" aria-label="Agent architecture flow">
+                <span>Goal</span>
+                <span>Gemini plan</span>
+                <span>Tools</span>
+                <span>Approval</span>
+                <span>Phoenix MCP review</span>
+              </div>
+              <p class="muted">
+                The repository includes an agent contract that maps the demo to Gemini, Google Cloud Agent Builder,
+                Cloud Run, Firestore, Secret Manager, and Arize Phoenix MCP.
+              </p>
+            </article>
+
+            <article class="panel">
+              <div class="panel-heading">
+                <h3>Safety policy</h3>
+                <span class="state-pill">Human gated</span>
+              </div>
+              <ul class="architecture-list">
+                <li>Require at least two evidence sources before proposing a mitigation.</li>
+                <li>Block config rollback, deployment, refund, billing, routing, and customer notification until approval.</li>
+                <li>Record execution and evaluation results as auditable trace evidence.</li>
+              </ul>
+            </article>
+
+            <article class="panel">
+              <div class="panel-heading">
+                <h3>Partner MCP role</h3>
+                <span class="state-pill">Arize track</span>
+              </div>
+              <ul class="architecture-list">
+                <li>Phoenix MCP reviews traces, spans, and failed evaluation samples.</li>
+                <li>The self-review loop identifies weak reasoning and missing tool calls.</li>
+                <li>Next-run recommendations update prompt, tool, and evaluation criteria.</li>
+              </ul>
             </article>
           </div>
         </section>

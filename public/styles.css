@@ -211,7 +211,8 @@ select {
 
 .status-grid,
 .workflow,
-.eval-grid {
+.eval-grid,
+.architecture-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 12px;
@@ -400,6 +401,46 @@ th {
   grid-template-columns: minmax(0, 0.85fr) minmax(0, 1fr);
 }
 
+.architecture-grid {
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.9fr);
+  gap: 18px;
+}
+
+.architecture-grid .panel:first-child {
+  grid-row: span 2;
+}
+
+.architecture-flow {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.architecture-flow span {
+  display: grid;
+  align-items: center;
+  min-height: 72px;
+  border: 1px solid var(--line);
+  padding: 10px;
+  background: #f7faf9;
+  color: var(--accent-strong);
+  font-size: 13px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.architecture-list {
+  margin: 0;
+  padding-left: 22px;
+}
+
+.architecture-list li {
+  margin: 10px 0;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
 .eval-list {
   display: grid;
   gap: 16px;
@@ -433,8 +474,18 @@ th {
   .split-layout,
   .workflow,
   .eval-grid,
+  .architecture-grid,
   .status-grid {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .architecture-grid .panel:first-child {
+    grid-column: 1 / -1;
+    grid-row: auto;
+  }
+
+  .architecture-flow {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
@@ -459,7 +510,16 @@ th {
   .split-layout,
   .workflow,
   .eval-grid,
+  .architecture-grid,
   .status-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .architecture-grid .panel:first-child {
+    grid-column: auto;
+  }
+
+  .architecture-flow {
     grid-template-columns: 1fr;
   }
 }

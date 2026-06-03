@@ -71,8 +71,9 @@ assert(html.includes('aria-label="Agent trace visualization"'), "Canvas has an a
 assert(html.includes('aria-controls="incidentView"'), "Incident nav controls its view");
 assert(html.includes('aria-controls="traceView"'), "Trace nav controls its view");
 assert(html.includes('aria-controls="evalsView"'), "Evals nav controls its view");
+assert(html.includes('aria-controls="architectureView"'), "Architecture nav controls its view");
 assert(html.includes('aria-selected="true"'), "Active nav item exposes selected state");
-assert((html.match(/tabindex="-1"/g) || []).length === 3, "All dynamic views are script-focusable");
+assert((html.match(/tabindex="-1"/g) || []).length === 4, "All dynamic views are script-focusable");
 assert(!/\son[a-z]+\s*=/.test(html), "HTML avoids inline event handlers");
 assert(!/(https?:)?\/\//.test(html), "HTML avoids external runtime dependencies");
 assert(app.includes("fallbackIncidents"), "App contains offline fallback incidents");
@@ -86,6 +87,7 @@ assert(css.includes("@media (max-width: 720px)"), "CSS includes mobile responsiv
 assert(css.includes("position: sticky"), "Approval panel remains visible during demo scrolling");
 assert(css.includes(":focus-visible"), "CSS includes visible keyboard focus styles");
 assert(css.includes("grid-template-columns: 1fr"), "CSS collapses major grids to one column on mobile");
+assert(css.includes(".architecture-flow"), "CSS includes architecture flow layout");
 assert(!/letter-spacing:\s*-/.test(css), "CSS avoids negative letter spacing");
 assert(!/(https?:)?\/\//.test(css), "CSS avoids external runtime dependencies");
 assert(!/(https?:)?\/\//.test(app), "App script avoids external runtime dependencies");
@@ -125,13 +127,14 @@ const focusOrder = [
   html.indexOf('data-view="incident"'),
   html.indexOf('data-view="trace"'),
   html.indexOf('data-view="evals"'),
+  html.indexOf('data-view="architecture"'),
   html.indexOf('id="incidentSelect"'),
   html.indexOf('id="runAgent"'),
   html.indexOf('id="approveAction"')
 ];
 assert(focusOrder.every((index) => index >= 0), "All key keyboard targets exist in the DOM");
-assert(focusOrder[0] < focusOrder[1] && focusOrder[1] < focusOrder[2], "Navigation tab order is logical");
-assert(focusOrder[3] < focusOrder[4], "Scenario select precedes Run agent in tab order");
+assert(focusOrder[0] < focusOrder[1] && focusOrder[1] < focusOrder[2] && focusOrder[2] < focusOrder[3], "Navigation tab order is logical");
+assert(focusOrder[4] < focusOrder[5], "Scenario select precedes Run agent in tab order");
 
 for (const requiredText of [
   "Observable agents that take approved action",
@@ -142,7 +145,10 @@ for (const requiredText of [
   "Root cause",
   "Trace timeline",
   "Evaluation scores",
-  "Self-review loop"
+  "Self-review loop",
+  "Agent Builder contract",
+  "Gemini + Google Cloud runtime",
+  "Partner MCP role"
 ]) {
   assert(html.includes(requiredText), `Recording path contains ${requiredText}`);
 }
