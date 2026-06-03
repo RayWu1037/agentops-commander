@@ -33,3 +33,5 @@ node scripts/test.mjs
 ```
 
 The static demo also works by opening `public/index.html` directly.
+
+For likely follow-up questions, see `JUDGE_QA.md`.

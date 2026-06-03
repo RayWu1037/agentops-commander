@@ -95,6 +95,7 @@ The front end can run directly from `public/index.html`. If the API is unavailab
 - `public/demo-captions.srt` is the hosted caption file linked from the recording console.
 - `SEEDANCE_DEMO_PROMPTS.md` and `seedance-demo-prompt-pack.txt` contain optional AI video prompts for intro/outro clips.
 - `JUDGES_BRIEF.md` contains the fastest judging path through the demo and repository.
+- `JUDGE_QA.md` contains concise answers to likely judge objections.
 - `DEMO_SCRIPT.md` contains the three-minute video narration.
 - `demo-captions.srt` contains upload-ready English captions for the demo video.
 - `VIDEO_QA_CHECKLIST.md` contains the pre-upload video recording checks.

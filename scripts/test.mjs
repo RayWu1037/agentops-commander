@@ -54,6 +54,7 @@ const app = await readFile(join(root, "public", "app.js"), "utf8");
 const css = await readFile(join(root, "public", "styles.css"), "utf8");
 const readme = await readFile(join(root, "README.md"), "utf8");
 const judgesBrief = await readFile(join(root, "JUDGES_BRIEF.md"), "utf8");
+const judgeQa = await readFile(join(root, "JUDGE_QA.md"), "utf8");
 const devpost = await readFile(join(root, "DEVPOST_SUBMISSION.md"), "utf8");
 const demoScript = await readFile(join(root, "DEMO_SCRIPT.md"), "utf8");
 const finalPack = await readFile(join(root, "FINAL_SUBMISSION_PACK.md"), "utf8");
@@ -126,9 +127,16 @@ assert(readme.includes("FINAL_SUBMISSION_PACK.md"), "README documents the final 
 assert(readme.includes("demo-captions.srt"), "README documents demo captions");
 assert(readme.includes("VIDEO_QA_CHECKLIST.md"), "README documents video QA checklist");
 assert(readme.includes("SEEDANCE_DEMO_PROMPTS.md"), "README documents Seedance-style prompts");
+assert(readme.includes("JUDGE_QA.md"), "README documents judge Q&A");
 assert(judgesBrief.includes("30-Second Review Path"), "Judges brief has a fast review path");
 assert(judgesBrief.includes("agent-builder-config.json"), "Judges brief points to the Agent Builder contract");
 assert(judgesBrief.includes("Arize Phoenix MCP"), "Judges brief names the partner MCP");
+assert(judgesBrief.includes("JUDGE_QA.md"), "Judges brief links judge Q&A");
+assert(judgeQa.includes("Is this a real agent or only a UI mockup?"), "Judge Q&A addresses mockup risk");
+assert(judgeQa.includes("Where are Gemini and Google Cloud Agent Builder represented?"), "Judge Q&A addresses Gemini and Agent Builder");
+assert(judgeQa.includes("Where is the partner MCP integration?"), "Judge Q&A addresses partner MCP");
+assert(judgeQa.includes("How is unsafe autonomous action prevented?"), "Judge Q&A addresses safety");
+assert(judgeQa.includes("Only as intro, transition, or outro clips"), "Judge Q&A limits AI video clip scope");
 assert(devpost.includes("Arize Phoenix"), "Devpost copy emphasizes Arize Phoenix");
 assert(devpost.includes("Gemini"), "Devpost copy emphasizes Gemini");
 assert(devpost.includes("Google Cloud Agent Builder"), "Devpost copy emphasizes Google Cloud Agent Builder");
@@ -258,6 +266,7 @@ for (const required of [
   "public/recording.html",
   "public/demo-captions.srt",
   "JUDGES_BRIEF.md",
+  "JUDGE_QA.md",
   "DEMO_SCRIPT.md",
   "demo-captions.srt",
   "VIDEO_QA_CHECKLIST.md",

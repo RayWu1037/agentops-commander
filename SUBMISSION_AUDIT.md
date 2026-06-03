@@ -19,6 +19,7 @@ Sources checked:
 - Demo video: pending final recording and upload.
 - Submission form copy: `DEVPOST_SUBMISSION.md`
 - Final copy/paste package: `FINAL_SUBMISSION_PACK.md`
+- Judge follow-up answers: `JUDGE_QA.md`
 
 ## Judging Criteria Alignment
 
