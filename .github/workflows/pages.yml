@@ -37,3 +37,11 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Smoke test hosted pages
+        run: |
+          set -euo pipefail
+          base_url="${{ steps.deployment.outputs.page_url }}"
+          curl --fail --silent --show-error "$base_url" | grep "AgentOps Commander"
+          curl --fail --silent --show-error "${base_url}recording.html" | grep "Record the winning demo"
+          curl --fail --silent --show-error "${base_url}demo-captions.srt" | grep "00:02:54,000 --> 00:03:00,000"

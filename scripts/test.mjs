@@ -147,6 +147,9 @@ assert(strategy.includes("WCAG 2.2"), "Test strategy references WCAG accessibili
 assert(ciWorkflow.includes("node scripts/test.mjs"), "CI workflow runs regression tests");
 assert(pagesWorkflow.includes("actions/deploy-pages"), "Pages workflow deploys the static demo");
 assert(pagesWorkflow.includes("enablement: true"), "Pages workflow can enable GitHub Pages on first deploy");
+assert(pagesWorkflow.includes("Smoke test hosted pages"), "Pages workflow smoke tests hosted pages after deployment");
+assert(pagesWorkflow.includes("recording.html"), "Pages workflow checks the recording console URL");
+assert(pagesWorkflow.includes("demo-captions.srt"), "Pages workflow checks the hosted caption file URL");
 assert(checklist.includes("[x] Confirm GitHub Pages is enabled"), "Championship checklist records hosted demo verification");
 assert(checklist.includes("[x] Add final Devpost submission pack"), "Championship checklist records final pack completion");
 assert(checklist.includes("[x] Add demo captions and video QA checklist"), "Championship checklist records video prep assets");
