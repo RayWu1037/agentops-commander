@@ -68,4 +68,5 @@ The repository includes a concrete `agent-builder-config.json` contract for Gemi
 - Upload or verify English captions using `demo-captions.srt`.
 - Use the tagline, built-with list, and submission description above.
 - Verify the repository is public and has `LICENSE` visible.
+- Verify GitHub repository homepage points to the hosted demo and topics include `google-cloud`, `gemini`, `agent-builder`, `arize`, and `mcp`.
 - Run one final hosted smoke test after saving the Devpost draft.

@@ -1,10 +1,20 @@
 # AgentOps Commander
 
-AgentOps Commander is a Gemini-ready, human-supervised incident response agent demo for the Google Cloud Rapid Agent Hackathon.
+AgentOps Commander is a Gemini and Google Cloud Agent Builder-ready, human-supervised incident response agent demo for the Google Cloud Rapid Agent Hackathon.
 
 Repository: https://github.com/RayWu1037/agentops-commander
 
 Hosted demo: https://raywu1037.github.io/agentops-commander/
+
+## Judge Quickstart
+
+1. Open the hosted demo.
+2. Click `Run agent`.
+3. Watch the agent plan, call tools, identify root cause, and stop at the approval gate.
+4. Approve the action.
+5. Open `Trace`, `Evals`, and `Architecture`.
+
+For a requirement-to-evidence review path, see `JUDGES_BRIEF.md` and `SUBMISSION_AUDIT.md`.
 
 The demo shows the loop the submission will emphasize:
 
@@ -59,6 +69,7 @@ The front end can run directly from `public/index.html`. If the API is unavailab
 ## Submission assets
 
 - `project-gallery.png` is a 3:2 image suitable for the Devpost image gallery.
+- `JUDGES_BRIEF.md` contains the fastest judging path through the demo and repository.
 - `DEMO_SCRIPT.md` contains the three-minute video narration.
 - `demo-captions.srt` contains upload-ready English captions for the demo video.
 - `VIDEO_QA_CHECKLIST.md` contains the pre-upload video recording checks.

@@ -52,6 +52,7 @@ const html = await readFile(join(root, "public", "index.html"), "utf8");
 const app = await readFile(join(root, "public", "app.js"), "utf8");
 const css = await readFile(join(root, "public", "styles.css"), "utf8");
 const readme = await readFile(join(root, "README.md"), "utf8");
+const judgesBrief = await readFile(join(root, "JUDGES_BRIEF.md"), "utf8");
 const devpost = await readFile(join(root, "DEVPOST_SUBMISSION.md"), "utf8");
 const demoScript = await readFile(join(root, "DEMO_SCRIPT.md"), "utf8");
 const finalPack = await readFile(join(root, "FINAL_SUBMISSION_PACK.md"), "utf8");
@@ -97,9 +98,14 @@ assert(!/(https?:)?\/\//.test(app), "App script avoids external runtime dependen
 assert(readme.includes("Offline demo mode"), "README documents offline demo mode");
 assert(readme.includes("https://github.com/RayWu1037/agentops-commander"), "README links the public repository");
 assert(readme.includes("Hosted demo: https://raywu1037.github.io/agentops-commander/"), "README includes hosted demo URL");
+assert(readme.includes("Judge Quickstart"), "README includes judge quickstart");
+assert(readme.includes("JUDGES_BRIEF.md"), "README links the judges brief");
 assert(readme.includes("FINAL_SUBMISSION_PACK.md"), "README documents the final submission pack");
 assert(readme.includes("demo-captions.srt"), "README documents demo captions");
 assert(readme.includes("VIDEO_QA_CHECKLIST.md"), "README documents video QA checklist");
+assert(judgesBrief.includes("30-Second Review Path"), "Judges brief has a fast review path");
+assert(judgesBrief.includes("agent-builder-config.json"), "Judges brief points to the Agent Builder contract");
+assert(judgesBrief.includes("Arize Phoenix MCP"), "Judges brief names the partner MCP");
 assert(devpost.includes("Arize Phoenix"), "Devpost copy emphasizes Arize Phoenix");
 assert(devpost.includes("Gemini"), "Devpost copy emphasizes Gemini");
 assert(devpost.includes("Google Cloud Agent Builder"), "Devpost copy emphasizes Google Cloud Agent Builder");
@@ -114,6 +120,7 @@ assert(finalPack.includes("public YouTube or Vimeo URL"), "Final pack tracks the
 assert(finalPack.includes("Use English narration or English subtitles"), "Final pack tracks English video requirement");
 assert(finalPack.includes("Keep the video at or under 3 minutes"), "Final pack tracks video length requirement");
 assert(finalPack.includes("demo-captions.srt"), "Final pack references the caption file");
+assert(finalPack.includes("google-cloud"), "Final pack tracks GitHub topic verification");
 assert(captions.includes("00:00:00,000 --> 00:00:08,000"), "Caption file uses SRT timestamps");
 assert(captions.includes("Gemini and Google Cloud Agent Builder"), "Caption file mentions Gemini and Agent Builder");
 assert(captions.includes("Arize Phoenix and Phoenix MCP"), "Caption file mentions Arize Phoenix MCP");
@@ -129,6 +136,7 @@ assert(pagesWorkflow.includes("enablement: true"), "Pages workflow can enable Gi
 assert(checklist.includes("[x] Confirm GitHub Pages is enabled"), "Championship checklist records hosted demo verification");
 assert(checklist.includes("[x] Add final Devpost submission pack"), "Championship checklist records final pack completion");
 assert(checklist.includes("[x] Add demo captions and video QA checklist"), "Championship checklist records video prep assets");
+assert(checklist.includes("[x] Confirm GitHub repo homepage and topics are set"), "Championship checklist records GitHub metadata verification");
 assert(checklist.includes("Record and upload public demo video"), "Championship checklist tracks demo video requirement");
 assert(agentConfig.agent.googleCloud.agentBuilder.includes("agent goal"), "Agent config defines Agent Builder contract");
 assert(agentConfig.agent.googleCloud.geminiModel.includes("gemini"), "Agent config selects a Gemini model target");
@@ -205,6 +213,7 @@ assert(escapedXss.every((payload) => !payload.includes("<script") && !payload.in
 for (const required of [
   "LICENSE",
   "Dockerfile",
+  "JUDGES_BRIEF.md",
   "DEMO_SCRIPT.md",
   "demo-captions.srt",
   "VIDEO_QA_CHECKLIST.md",
