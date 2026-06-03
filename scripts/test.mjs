@@ -97,6 +97,7 @@ assert(strategy.includes("OWASP"), "Test strategy references OWASP security test
 assert(strategy.includes("WCAG 2.2"), "Test strategy references WCAG accessibility testing");
 assert(ciWorkflow.includes("node scripts/test.mjs"), "CI workflow runs regression tests");
 assert(pagesWorkflow.includes("actions/deploy-pages"), "Pages workflow deploys the static demo");
+assert(pagesWorkflow.includes("enablement: true"), "Pages workflow can enable GitHub Pages on first deploy");
 assert(checklist.includes("Record and upload public demo video"), "Championship checklist tracks demo video requirement");
 assert(gitignore.includes("*.log"), "Git ignore excludes logs");
 assert(gitignore.includes("verification-*.png"), "Git ignore excludes verification screenshots");
