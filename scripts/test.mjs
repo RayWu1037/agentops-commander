@@ -54,6 +54,7 @@ const css = await readFile(join(root, "public", "styles.css"), "utf8");
 const readme = await readFile(join(root, "README.md"), "utf8");
 const devpost = await readFile(join(root, "DEVPOST_SUBMISSION.md"), "utf8");
 const demoScript = await readFile(join(root, "DEMO_SCRIPT.md"), "utf8");
+const finalPack = await readFile(join(root, "FINAL_SUBMISSION_PACK.md"), "utf8");
 const gitignore = await readFile(join(root, ".gitignore"), "utf8");
 const strategy = await readFile(join(root, "TEST_STRATEGY.md"), "utf8");
 const ciWorkflow = await readFile(join(root, ".github", "workflows", "ci.yml"), "utf8");
@@ -94,6 +95,7 @@ assert(!/(https?:)?\/\//.test(app), "App script avoids external runtime dependen
 assert(readme.includes("Offline demo mode"), "README documents offline demo mode");
 assert(readme.includes("https://github.com/RayWu1037/agentops-commander"), "README links the public repository");
 assert(readme.includes("Hosted demo: https://raywu1037.github.io/agentops-commander/"), "README includes hosted demo URL");
+assert(readme.includes("FINAL_SUBMISSION_PACK.md"), "README documents the final submission pack");
 assert(devpost.includes("Arize Phoenix"), "Devpost copy emphasizes Arize Phoenix");
 assert(devpost.includes("Gemini"), "Devpost copy emphasizes Gemini");
 assert(devpost.includes("Google Cloud Agent Builder"), "Devpost copy emphasizes Google Cloud Agent Builder");
@@ -101,12 +103,19 @@ assert(devpost.includes("https://github.com/RayWu1037/agentops-commander"), "Dev
 assert(!devpost.includes("Python, FastAPI, React"), "Devpost copy does not claim unused implementation stacks");
 assert(demoScript.includes("Google Cloud Agent Builder"), "Demo script names the Agent Builder workflow");
 assert(demoScript.includes("Arize Phoenix traces"), "Demo script names the partner trace loop");
+assert(finalPack.includes("Partner track: Arize"), "Final pack selects the Arize partner track");
+assert(finalPack.includes("https://raywu1037.github.io/agentops-commander/"), "Final pack includes hosted demo URL");
+assert(finalPack.includes("https://github.com/RayWu1037/agentops-commander"), "Final pack includes code repository URL");
+assert(finalPack.includes("public YouTube or Vimeo URL"), "Final pack tracks the required public video URL");
+assert(finalPack.includes("Use English narration or English subtitles"), "Final pack tracks English video requirement");
+assert(finalPack.includes("Keep the video at or under 3 minutes"), "Final pack tracks video length requirement");
 assert(strategy.includes("OWASP"), "Test strategy references OWASP security testing");
 assert(strategy.includes("WCAG 2.2"), "Test strategy references WCAG accessibility testing");
 assert(ciWorkflow.includes("node scripts/test.mjs"), "CI workflow runs regression tests");
 assert(pagesWorkflow.includes("actions/deploy-pages"), "Pages workflow deploys the static demo");
 assert(pagesWorkflow.includes("enablement: true"), "Pages workflow can enable GitHub Pages on first deploy");
 assert(checklist.includes("[x] Confirm GitHub Pages is enabled"), "Championship checklist records hosted demo verification");
+assert(checklist.includes("[x] Add final Devpost submission pack"), "Championship checklist records final pack completion");
 assert(checklist.includes("Record and upload public demo video"), "Championship checklist tracks demo video requirement");
 assert(agentConfig.agent.googleCloud.agentBuilder.includes("agent goal"), "Agent config defines Agent Builder contract");
 assert(agentConfig.agent.googleCloud.geminiModel.includes("gemini"), "Agent config selects a Gemini model target");
@@ -185,6 +194,7 @@ for (const required of [
   "Dockerfile",
   "DEMO_SCRIPT.md",
   "DEVPOST_SUBMISSION.md",
+  "FINAL_SUBMISSION_PACK.md",
   "SUBMISSION_AUDIT.md",
   "TESTING.md",
   "CHAMPIONSHIP_CHECKLIST.md",

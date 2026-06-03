@@ -18,6 +18,7 @@ Sources checked:
 - Open-source license: `LICENSE`
 - Demo video: pending final recording and upload.
 - Submission form copy: `DEVPOST_SUBMISSION.md`
+- Final copy/paste package: `FINAL_SUBMISSION_PACK.md`
 
 ## Judging Criteria Alignment
 

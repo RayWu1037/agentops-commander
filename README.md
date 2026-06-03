@@ -61,6 +61,7 @@ The front end can run directly from `public/index.html`. If the API is unavailab
 - `project-gallery.png` is a 3:2 image suitable for the Devpost image gallery.
 - `DEMO_SCRIPT.md` contains the three-minute video narration.
 - `DEVPOST_SUBMISSION.md` contains copy-ready Devpost text.
+- `FINAL_SUBMISSION_PACK.md` contains copy-ready Devpost fields, links, and video compliance checks.
 - `SUBMISSION_AUDIT.md` maps the project to requirements and judging criteria.
 - `agent-builder-config.json` defines the Gemini, Google Cloud Agent Builder, Arize Phoenix MCP, safety, and eval contract.
 - `TESTING.md` contains the regression checklist.
