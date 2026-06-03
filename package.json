@@ -8,7 +8,8 @@
     "start": "node server.js",
     "dev": "node server.js",
     "check": "node --check server.js && node --check public/app.js",
-    "test": "node scripts/test.mjs"
+    "test": "node scripts/test.mjs",
+    "record:demo": "node scripts/record-demo.mjs"
   },
   "engines": {
     "node": ">=20"

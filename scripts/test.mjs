@@ -130,6 +130,7 @@ assert(readme.includes("DEMO_VIDEO_ASSEMBLY.md"), "README documents demo video a
 assert(readme.includes("VIDEO_QA_CHECKLIST.md"), "README documents video QA checklist");
 assert(readme.includes("SEEDANCE_DEMO_PROMPTS.md"), "README documents Seedance-style prompts");
 assert(readme.includes("JUDGE_QA.md"), "README documents judge Q&A");
+assert(readme.includes("npm run record:demo"), "README documents automated demo recording");
 assert(judgesBrief.includes("30-Second Review Path"), "Judges brief has a fast review path");
 assert(judgesBrief.includes("agent-builder-config.json"), "Judges brief points to the Agent Builder contract");
 assert(judgesBrief.includes("Arize Phoenix MCP"), "Judges brief names the partner MCP");
@@ -275,6 +276,7 @@ for (const required of [
   "DEMO_SCRIPT.md",
   "DEMO_VIDEO_ASSEMBLY.md",
   "demo-captions.srt",
+  "scripts/record-demo.mjs",
   "VIDEO_QA_CHECKLIST.md",
   "SEEDANCE_DEMO_PROMPTS.md",
   "seedance-demo-prompt-pack.txt",

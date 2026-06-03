@@ -100,6 +100,7 @@ The front end can run directly from `public/index.html`. If the API is unavailab
 - `DEMO_SCRIPT.md` contains the three-minute video narration.
 - `demo-captions.srt` contains upload-ready English captions for the demo video.
 - `VIDEO_QA_CHECKLIST.md` contains the pre-upload video recording checks.
+- `npm run record:demo` can produce a browser-recorded `.webm` walkthrough when Playwright and Chrome/Edge are available.
 - `DEVPOST_SUBMISSION.md` contains copy-ready Devpost text.
 - `FINAL_SUBMISSION_PACK.md` contains copy-ready Devpost fields, links, and video compliance checks.
 - `SUBMISSION_AUDIT.md` maps the project to requirements and judging criteria.
