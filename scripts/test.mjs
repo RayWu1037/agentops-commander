@@ -57,6 +57,7 @@ const judgesBrief = await readFile(join(root, "JUDGES_BRIEF.md"), "utf8");
 const judgeQa = await readFile(join(root, "JUDGE_QA.md"), "utf8");
 const devpost = await readFile(join(root, "DEVPOST_SUBMISSION.md"), "utf8");
 const demoScript = await readFile(join(root, "DEMO_SCRIPT.md"), "utf8");
+const demoAssembly = await readFile(join(root, "DEMO_VIDEO_ASSEMBLY.md"), "utf8");
 const finalPack = await readFile(join(root, "FINAL_SUBMISSION_PACK.md"), "utf8");
 const captions = await readFile(join(root, "demo-captions.srt"), "utf8");
 const publicCaptions = await readFile(join(root, "public", "demo-captions.srt"), "utf8");
@@ -125,6 +126,7 @@ assert(readme.includes("Judge Quickstart"), "README includes judge quickstart");
 assert(readme.includes("JUDGES_BRIEF.md"), "README links the judges brief");
 assert(readme.includes("FINAL_SUBMISSION_PACK.md"), "README documents the final submission pack");
 assert(readme.includes("demo-captions.srt"), "README documents demo captions");
+assert(readme.includes("DEMO_VIDEO_ASSEMBLY.md"), "README documents demo video assembly plan");
 assert(readme.includes("VIDEO_QA_CHECKLIST.md"), "README documents video QA checklist");
 assert(readme.includes("SEEDANCE_DEMO_PROMPTS.md"), "README documents Seedance-style prompts");
 assert(readme.includes("JUDGE_QA.md"), "README documents judge Q&A");
@@ -144,6 +146,9 @@ assert(devpost.includes("https://github.com/RayWu1037/agentops-commander"), "Dev
 assert(!devpost.includes("Python, FastAPI, React"), "Devpost copy does not claim unused implementation stacks");
 assert(demoScript.includes("Google Cloud Agent Builder"), "Demo script names the Agent Builder workflow");
 assert(demoScript.includes("Arize Phoenix traces"), "Demo script names the partner trace loop");
+assert(demoAssembly.includes("AI clips should only add polish"), "Demo assembly keeps AI clips secondary");
+assert(demoAssembly.includes("Upload as public or unlisted YouTube/Vimeo"), "Demo assembly tracks required upload platform");
+assert(demoAssembly.includes("demo-captions.srt"), "Demo assembly references caption file");
 assert(finalPack.includes("Partner track: Arize"), "Final pack selects the Arize partner track");
 assert(finalPack.includes("https://raywu1037.github.io/agentops-commander/"), "Final pack includes hosted demo URL");
 assert(finalPack.includes("https://raywu1037.github.io/agentops-commander/recording.html"), "Final pack includes recording console URL");
@@ -268,6 +273,7 @@ for (const required of [
   "JUDGES_BRIEF.md",
   "JUDGE_QA.md",
   "DEMO_SCRIPT.md",
+  "DEMO_VIDEO_ASSEMBLY.md",
   "demo-captions.srt",
   "VIDEO_QA_CHECKLIST.md",
   "SEEDANCE_DEMO_PROMPTS.md",
