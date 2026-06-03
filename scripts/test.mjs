@@ -53,11 +53,13 @@ const app = await readFile(join(root, "public", "app.js"), "utf8");
 const css = await readFile(join(root, "public", "styles.css"), "utf8");
 const readme = await readFile(join(root, "README.md"), "utf8");
 const devpost = await readFile(join(root, "DEVPOST_SUBMISSION.md"), "utf8");
+const demoScript = await readFile(join(root, "DEMO_SCRIPT.md"), "utf8");
 const gitignore = await readFile(join(root, ".gitignore"), "utf8");
 const strategy = await readFile(join(root, "TEST_STRATEGY.md"), "utf8");
 const ciWorkflow = await readFile(join(root, ".github", "workflows", "ci.yml"), "utf8");
 const pagesWorkflow = await readFile(join(root, ".github", "workflows", "pages.yml"), "utf8");
 const checklist = await readFile(join(root, "CHAMPIONSHIP_CHECKLIST.md"), "utf8");
+const agentConfig = JSON.parse(await readFile(join(root, "agent-builder-config.json"), "utf8"));
 
 assert(html.includes('href="styles.css"'), "HTML uses relative stylesheet path for file:// compatibility");
 assert(html.includes('src="app.js"'), "HTML uses relative script path for file:// compatibility");
@@ -89,16 +91,26 @@ assert(!/(https?:)?\/\//.test(css), "CSS avoids external runtime dependencies");
 assert(!/(https?:)?\/\//.test(app), "App script avoids external runtime dependencies");
 assert(readme.includes("Offline demo mode"), "README documents offline demo mode");
 assert(readme.includes("https://github.com/RayWu1037/agentops-commander"), "README links the public repository");
-assert(readme.includes("https://raywu1037.github.io/agentops-commander/"), "README includes planned hosted demo URL");
+assert(readme.includes("Hosted demo: https://raywu1037.github.io/agentops-commander/"), "README includes hosted demo URL");
 assert(devpost.includes("Arize Phoenix"), "Devpost copy emphasizes Arize Phoenix");
 assert(devpost.includes("Gemini"), "Devpost copy emphasizes Gemini");
+assert(devpost.includes("Google Cloud Agent Builder"), "Devpost copy emphasizes Google Cloud Agent Builder");
 assert(devpost.includes("https://github.com/RayWu1037/agentops-commander"), "Devpost copy includes GitHub repository link");
+assert(!devpost.includes("Python, FastAPI, React"), "Devpost copy does not claim unused implementation stacks");
+assert(demoScript.includes("Google Cloud Agent Builder"), "Demo script names the Agent Builder workflow");
+assert(demoScript.includes("Arize Phoenix traces"), "Demo script names the partner trace loop");
 assert(strategy.includes("OWASP"), "Test strategy references OWASP security testing");
 assert(strategy.includes("WCAG 2.2"), "Test strategy references WCAG accessibility testing");
 assert(ciWorkflow.includes("node scripts/test.mjs"), "CI workflow runs regression tests");
 assert(pagesWorkflow.includes("actions/deploy-pages"), "Pages workflow deploys the static demo");
 assert(pagesWorkflow.includes("enablement: true"), "Pages workflow can enable GitHub Pages on first deploy");
+assert(checklist.includes("[x] Confirm GitHub Pages is enabled"), "Championship checklist records hosted demo verification");
 assert(checklist.includes("Record and upload public demo video"), "Championship checklist tracks demo video requirement");
+assert(agentConfig.agent.googleCloud.agentBuilder.includes("agent goal"), "Agent config defines Agent Builder contract");
+assert(agentConfig.agent.googleCloud.geminiModel.includes("gemini"), "Agent config selects a Gemini model target");
+assert(agentConfig.agent.partnerTrack.name === "Arize", "Agent config selects the Arize partner track");
+assert(agentConfig.tools.some((tool) => tool.type === "partner_mcp" && tool.name === "phoenix_trace_review"), "Agent config defines Phoenix MCP tool");
+assert(agentConfig.safetyPolicy.humanApprovalRequiredFor.length >= 5, "Agent config defines human approval boundaries");
 assert(gitignore.includes("*.log"), "Git ignore excludes logs");
 assert(gitignore.includes("verification-*.png"), "Git ignore excludes verification screenshots");
 
@@ -167,8 +179,10 @@ for (const required of [
   "Dockerfile",
   "DEMO_SCRIPT.md",
   "DEVPOST_SUBMISSION.md",
+  "SUBMISSION_AUDIT.md",
   "TESTING.md",
   "CHAMPIONSHIP_CHECKLIST.md",
+  "agent-builder-config.json",
   ".github/workflows/ci.yml",
   ".github/workflows/pages.yml",
   "project-gallery.png"

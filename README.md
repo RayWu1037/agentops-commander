@@ -4,7 +4,7 @@ AgentOps Commander is a Gemini-ready, human-supervised incident response agent d
 
 Repository: https://github.com/RayWu1037/agentops-commander
 
-Planned hosted demo: https://raywu1037.github.io/agentops-commander/
+Hosted demo: https://raywu1037.github.io/agentops-commander/
 
 The demo shows the loop the submission will emphasize:
 
@@ -61,13 +61,15 @@ The front end can run directly from `public/index.html`. If the API is unavailab
 - `project-gallery.png` is a 3:2 image suitable for the Devpost image gallery.
 - `DEMO_SCRIPT.md` contains the three-minute video narration.
 - `DEVPOST_SUBMISSION.md` contains copy-ready Devpost text.
+- `SUBMISSION_AUDIT.md` maps the project to requirements and judging criteria.
+- `agent-builder-config.json` defines the Gemini, Google Cloud Agent Builder, Arize Phoenix MCP, safety, and eval contract.
 - `TESTING.md` contains the regression checklist.
 - `.github/workflows/ci.yml` runs the quality gate.
 - `.github/workflows/pages.yml` deploys the static demo to GitHub Pages.
 
 ## Google Cloud and Gemini integration plan
 
-The local runtime is intentionally code-owned so it can be moved to Google Cloud Run and wired to Gemini or ADK without rebuilding the product surface.
+The local runtime is intentionally code-owned so it can be moved to Google Cloud Run and wired to Gemini, Google Cloud Agent Builder, and Arize Phoenix MCP without rebuilding the product surface. The concrete agent contract is captured in `agent-builder-config.json`.
 
 Planned production components:
 

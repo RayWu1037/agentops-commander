@@ -4,7 +4,7 @@
 
 This is AgentOps Commander, a human-supervised incident response agent for real-world operations teams.
 
-Most agents can answer questions. This one plans, investigates, asks for approval, acts, and then reviews its own traces.
+Most agents can answer questions. This one is designed as a Gemini and Google Cloud Agent Builder workflow: it plans, investigates, asks for approval, acts, and then reviews its own Arize Phoenix traces.
 
 ## 0:20-0:45 - Incident
 
@@ -38,6 +38,6 @@ Then I switch to evaluations. The agent is scored for task success, evidence cov
 
 ## 2:45-3:00 - Why It Matters
 
-The self-review loop is the differentiator. Using Arize Phoenix and Phoenix MCP, the agent can review weak traces and improve its next run.
+The self-review loop is the differentiator. Using Arize Phoenix and Phoenix MCP, the agent can review weak traces and improve its next run. The repository includes the Agent Builder contract, safety policy, and evaluation targets that make this workflow portable to Google Cloud Run.
 
 AgentOps Commander is not just an assistant. It is an observable, evaluated, human-supervised agent that can safely get real work done.

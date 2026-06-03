@@ -6,16 +6,16 @@ AgentOps Commander
 
 ## Elevator pitch
 
-A Gemini-powered agent that investigates incidents, takes approved actions, and improves itself using Arize Phoenix traces and evaluations.
+A Gemini and Google Cloud Agent Builder-ready agent that investigates incidents, takes approved actions, and improves itself using Arize Phoenix traces and MCP review.
 
 ## Built with
 
-Gemini, Google Cloud, Cloud Run, Google Agent Builder, Python, FastAPI, React, Arize Phoenix, Phoenix MCP, OpenInference, OpenTelemetry, Firestore, Secret Manager
+Gemini, Google Cloud, Google Cloud Agent Builder, Cloud Run, Node.js, HTML, CSS, JavaScript, Arize Phoenix, Phoenix MCP, OpenInference, OpenTelemetry, Firestore, Secret Manager, GitHub Pages
 
 ## Links
 
 - Code: https://github.com/RayWu1037/agentops-commander
-- Planned demo: https://raywu1037.github.io/agentops-commander/
+- Demo: https://raywu1037.github.io/agentops-commander/
 
 ## About the project
 
@@ -33,11 +33,11 @@ The key feature is the self-improvement loop. Every agent step is traced with Ar
 
 ### How we built it
 
-The demo is a code-owned agent runtime with a web dashboard. The current build includes deterministic demo mode for reliable judging and recording, plus integration points for Gemini, Google Cloud Run, Arize Phoenix, OpenInference, and Phoenix MCP.
+The demo is a code-owned Node.js agent runtime with a web dashboard. The current build includes deterministic demo mode for reliable judging and recording, plus a concrete `agent-builder-config.json` contract for Gemini, Google Cloud Agent Builder, Cloud Run, Arize Phoenix, OpenInference, and Phoenix MCP.
 
 The UI shows the operational incident, the agent plan, tool calls, evidence, approval gate, execution result, trace timeline, evaluation scores, and self-review recommendations.
 
-The repository includes a 101-check regression suite based on OWASP, WCAG, MDN, and web.dev guidance. It covers security headers, path traversal payloads, HTTP verb tampering, malformed requests, XSS-shaped payload escaping, offline fallback, accessibility metadata, mobile layout risks, and the agent approval flow.
+The repository includes an automated regression suite based on OWASP, WCAG, MDN, and web.dev guidance. It covers security headers, path traversal payloads, HTTP verb tampering, malformed requests, XSS-shaped payload escaping, offline fallback, accessibility metadata, mobile layout risks, hosted-demo readiness, submission assets, and the agent approval flow.
 
 ### Challenges we ran into
 
@@ -55,4 +55,4 @@ Production agents need observability as a first-class feature. Tracing, evaluati
 
 ### What's next
 
-Next steps are to connect live Gemini reasoning, deploy the runtime to Cloud Run, stream OpenInference traces into Arize Phoenix, wire Phoenix MCP for real trace queries, and add more operational playbooks.
+Next steps are to connect live Gemini reasoning through the Agent Builder contract, deploy the runtime to Cloud Run, stream OpenInference traces into Arize Phoenix, wire Phoenix MCP for real trace queries, and add more operational playbooks.

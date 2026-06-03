@@ -14,7 +14,9 @@ This is the practical bar for turning AgentOps Commander from a strong prototype
 - [x] Automated regression tests
 - [x] GitHub Actions CI workflow
 - [x] GitHub Pages deployment workflow
-- [ ] Confirm GitHub Pages is enabled and demo URL resolves
+- [x] Confirm GitHub Pages is enabled and demo URL resolves
+- [x] Add Agent Builder / Gemini / Arize MCP contract for judging
+- [x] Add requirement-to-evidence submission audit
 - [ ] Record and upload public demo video under 3 minutes
 - [ ] Add final hosted demo URL and video URL to Devpost
 

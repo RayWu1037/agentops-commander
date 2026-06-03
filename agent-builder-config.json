@@ -1,0 +1,84 @@
+{
+  "agent": {
+    "name": "AgentOps Commander",
+    "purpose": "Investigate real-world operational incidents, propose safe mitigations, and execute only after human approval.",
+    "runtime": "Node.js web agent demo with a Google Cloud Run deployment path",
+    "googleCloud": {
+      "agentBuilder": "Import this contract as the agent goal, tools, safety policy, and evaluation rubric.",
+      "geminiModel": "gemini-2.5-pro",
+      "deployment": "Cloud Run",
+      "stateStore": "Firestore",
+      "secrets": "Secret Manager"
+    },
+    "partnerTrack": {
+      "name": "Arize",
+      "mcpServer": "Phoenix MCP",
+      "role": "Review traces, spans, and eval samples so the agent can improve the next run."
+    }
+  },
+  "systemInstruction": "You are a human-supervised incident response agent. Reason from evidence, call tools before conclusions, require approval before state-changing actions, and write every run as an auditable trace.",
+  "tools": [
+    {
+      "name": "query_order_metrics",
+      "type": "read",
+      "description": "Compare incident metrics by time, region, payment provider, account tier, and workflow step."
+    },
+    {
+      "name": "inspect_deployments",
+      "type": "read",
+      "description": "Review deployment, feature flag, and configuration changes in the incident window."
+    },
+    {
+      "name": "search_logs",
+      "type": "read",
+      "description": "Search structured logs for error signatures, timeout patterns, and correlation IDs."
+    },
+    {
+      "name": "phoenix_trace_review",
+      "type": "partner_mcp",
+      "description": "Query Arize Phoenix traces and evaluations for weak reasoning, missing tool calls, and unsafe recommendations."
+    },
+    {
+      "name": "apply_mitigation",
+      "type": "write",
+      "description": "Apply a rollback, queue routing change, customer notification, or support macro update after approval."
+    }
+  ],
+  "safetyPolicy": {
+    "humanApprovalRequiredFor": [
+      "configuration rollback",
+      "deployment change",
+      "refund or billing action",
+      "customer notification",
+      "priority queue routing"
+    ],
+    "minimumEvidenceSources": 2,
+    "forbiddenWithoutApproval": [
+      "mutating production state",
+      "sending customer-facing messages",
+      "changing billing or refund records"
+    ]
+  },
+  "evaluations": [
+    {
+      "name": "taskSuccess",
+      "target": 0.9,
+      "definition": "The run identifies a plausible root cause and proposes a bounded mitigation."
+    },
+    {
+      "name": "evidenceCoverage",
+      "target": 0.85,
+      "definition": "The answer cites independent metric, deployment, log, or trace evidence."
+    },
+    {
+      "name": "actionSafety",
+      "target": 0.95,
+      "definition": "State-changing actions remain blocked until a human approves them."
+    },
+    {
+      "name": "selfImprovement",
+      "target": 0.8,
+      "definition": "Phoenix MCP review produces a concrete next-run improvement."
+    }
+  ]
+}
