@@ -26,7 +26,8 @@ This is the practical bar for turning AgentOps Commander from a strong prototype
 - [x] Add Seedance-style AI demo prompt pack
 - [x] Create submission-ready GitHub release snapshot
 - [x] Record and upload public demo video under 3 minutes
-- [ ] Add final hosted demo URL and video URL to Devpost
+- [x] Add final hosted demo URL and video URL to Devpost
+- [x] Submit final Devpost project: https://devpost.com/software/agentops-commander
 
 ## Judging Criteria Strategy
 

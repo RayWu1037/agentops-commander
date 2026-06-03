@@ -60,12 +60,13 @@ Only as intro, transition, or outro clips. The Devpost demo should mainly show t
 - GitHub Pages deploy with post-deploy smoke tests
 - Stable release: https://github.com/RayWu1037/agentops-commander/releases/tag/v0.1.0-submission
 - Final issue tracker: https://github.com/RayWu1037/agentops-commander/issues/1
+- Submitted Devpost project: https://devpost.com/software/agentops-commander
 - Devpost copy pack, captions, recording console, gallery image, and judge brief
 
 ## What remains before final Devpost submission?
 
-Only external actions remain:
+The final Devpost submission is complete:
 
 - Demo video is uploaded: https://youtu.be/TrcCUcYIb6c
-- Paste the video URL into Devpost and issue #1.
-- Save or submit the final Devpost form.
+- Devpost project is submitted: https://devpost.com/software/agentops-commander
+- Deadline edits remain available until June 11, 2026.

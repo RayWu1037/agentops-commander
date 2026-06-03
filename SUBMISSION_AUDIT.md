@@ -17,6 +17,7 @@ Sources checked:
 - Public open-source repository: https://github.com/RayWu1037/agentops-commander
 - Open-source license: `LICENSE`
 - Demo video: https://youtu.be/TrcCUcYIb6c
+- Devpost submission: https://devpost.com/software/agentops-commander
 - Submission form copy: `DEVPOST_SUBMISSION.md`
 - Final copy/paste package: `FINAL_SUBMISSION_PACK.md`
 - Judge follow-up answers: `JUDGE_QA.md`
@@ -58,7 +59,8 @@ Evidence:
 - The differentiator is the plan-act-trace-improve loop: the agent does not just answer, it acts under supervision and uses Phoenix MCP trace review to improve the next run.
 - The project combines Google Cloud agent execution with partner observability and human approval, which directly addresses trust in production agents.
 
-## Remaining Final Submission Work
+## Final Submission Result
 
-- Paste the hosted demo URL, code URL, video URL, selected Arize track, and `DEVPOST_SUBMISSION.md` copy into Devpost.
-- Do one last hosted-demo smoke test immediately before final submission.
+- Devpost submission is complete: https://devpost.com/software/agentops-commander
+- Hosted demo URL, code URL, video URL, selected Arize track, and project copy were saved in Devpost.
+- A final hosted-demo smoke test was completed before submission.

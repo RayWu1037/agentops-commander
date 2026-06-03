@@ -15,6 +15,8 @@ Recording console: https://raywu1037.github.io/agentops-commander/recording.html
 
 Submission release: https://github.com/RayWu1037/agentops-commander/releases/tag/v0.1.0-submission
 
+Devpost submission: https://devpost.com/software/agentops-commander
+
 ## Final Submission Status
 
 | Item | Status | Evidence |
@@ -26,7 +28,7 @@ Submission release: https://github.com/RayWu1037/agentops-commander/releases/tag
 | Gemini + Agent Builder contract | Ready | `agent-builder-config.json` |
 | Final external tracker | Open | GitHub issue #1: https://github.com/RayWu1037/agentops-commander/issues/1 |
 | Demo video | Ready | https://youtu.be/TrcCUcYIb6c |
-| Devpost final submit | Pending | Paste the final video URL and project links into Devpost |
+| Devpost final submit | Submitted | https://devpost.com/software/agentops-commander |
 
 ## Judge Quickstart
 

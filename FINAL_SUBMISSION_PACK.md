@@ -8,6 +8,7 @@ Use this file as the copy/paste source for the final Devpost submission.
 - Recording console: https://raywu1037.github.io/agentops-commander/recording.html
 - Code repository: https://github.com/RayWu1037/agentops-commander
 - Submission release: https://github.com/RayWu1037/agentops-commander/releases/tag/v0.1.0-submission
+- Devpost submission: https://devpost.com/software/agentops-commander
 - Demo video URL: https://youtu.be/TrcCUcYIb6c
 - Partner track: Arize
 - Final external checklist issue: https://github.com/RayWu1037/agentops-commander/issues/1
@@ -65,16 +66,16 @@ The repository includes a concrete `agent-builder-config.json` contract for Gemi
 
 ## Final Devpost Checklist
 
-- Select Partner track: Arize.
-- Paste hosted demo URL: https://raywu1037.github.io/agentops-commander/
-- Paste code URL: https://github.com/RayWu1037/agentops-commander
-- Paste public video URL: https://youtu.be/TrcCUcYIb6c
-- Update final checklist issue #1 after the video URL and Devpost fields are saved.
-- Upload `project-gallery.png` as the project gallery image.
-- Upload or verify English captions using `demo-captions.srt`.
+- Submitted to Devpost: https://devpost.com/software/agentops-commander
+- Selected Partner track: Arize.
+- Pasted hosted demo URL: https://raywu1037.github.io/agentops-commander/
+- Pasted code URL: https://github.com/RayWu1037/agentops-commander
+- Pasted public video URL: https://youtu.be/TrcCUcYIb6c
+- Uploaded `project-gallery.png` as the project gallery image.
+- Verified English captions are available in `demo-captions.srt`.
 - If using Seedance-style AI clips, keep them as intro/transition/outro only; the main video must show the real hosted app.
-- Use the tagline, built-with list, and submission description above.
-- Verify the repository is public and has `LICENSE` visible.
+- Used the tagline, built-with list, and submission description above.
+- Verified the repository is public and has `LICENSE` visible.
 - Use release `v0.1.0-submission` as the stable judging snapshot if Devpost asks for a specific release or version.
-- Verify GitHub repository homepage points to the hosted demo and topics include `google-cloud`, `gemini`, `agent-builder`, `arize`, and `mcp`.
-- Run one final hosted smoke test after saving the Devpost draft.
+- Verified GitHub repository homepage points to the hosted demo and topics include `google-cloud`, `gemini`, `agent-builder`, `arize`, and `mcp`.
+- Ran the final hosted smoke test before submission.

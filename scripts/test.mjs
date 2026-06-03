@@ -120,7 +120,8 @@ assert(readme.includes("Final Submission Status"), "README includes final submis
 assert(readme.includes("| Submission release | Ready |"), "README marks submission release ready");
 assert(readme.includes("https://github.com/RayWu1037/agentops-commander/issues/1"), "README links final submission issue");
 assert(readme.includes("| Demo video | Ready | https://youtu.be/TrcCUcYIb6c |"), "README links the uploaded demo video");
-assert(readme.includes("| Devpost final submit | Pending |"), "README clearly marks final Devpost submission as pending");
+assert(readme.includes("| Devpost final submit | Submitted | https://devpost.com/software/agentops-commander |"), "README clearly marks final Devpost submission as submitted");
+assert(readme.includes("Devpost submission: https://devpost.com/software/agentops-commander"), "README links the public Devpost submission");
 assert(readme.includes("public/demo-captions.srt"), "README documents hosted caption file");
 assert(readme.includes("Judge Quickstart"), "README includes judge quickstart");
 assert(readme.includes("JUDGES_BRIEF.md"), "README links the judges brief");
