@@ -21,6 +21,7 @@ Recording console: https://raywu1037.github.io/agentops-commander/recording.html
 | Hosted demo | Ready | GitHub Pages with post-deploy smoke tests |
 | Partner track | Ready | Arize / Phoenix MCP |
 | Gemini + Agent Builder contract | Ready | `agent-builder-config.json` |
+| Final external tracker | Open | GitHub issue #1: https://github.com/RayWu1037/agentops-commander/issues/1 |
 | Demo video | Pending | Record with `public/recording.html`, upload to YouTube or Vimeo |
 | Devpost final submit | Pending | Paste final video URL into `FINAL_SUBMISSION_PACK.md` fields |
 

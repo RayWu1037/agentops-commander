@@ -112,6 +112,7 @@ assert(readme.includes("https://github.com/RayWu1037/agentops-commander"), "READ
 assert(readme.includes("Hosted demo: https://raywu1037.github.io/agentops-commander/"), "README includes hosted demo URL");
 assert(readme.includes("recording.html"), "README links the hosted recording console");
 assert(readme.includes("Final Submission Status"), "README includes final submission status table");
+assert(readme.includes("https://github.com/RayWu1037/agentops-commander/issues/1"), "README links final submission issue");
 assert(readme.includes("| Demo video | Pending |"), "README clearly marks demo video as pending");
 assert(readme.includes("| Devpost final submit | Pending |"), "README clearly marks final Devpost submission as pending");
 assert(readme.includes("public/demo-captions.srt"), "README documents hosted caption file");
@@ -134,6 +135,7 @@ assert(finalPack.includes("Partner track: Arize"), "Final pack selects the Arize
 assert(finalPack.includes("https://raywu1037.github.io/agentops-commander/"), "Final pack includes hosted demo URL");
 assert(finalPack.includes("https://raywu1037.github.io/agentops-commander/recording.html"), "Final pack includes recording console URL");
 assert(finalPack.includes("https://github.com/RayWu1037/agentops-commander"), "Final pack includes code repository URL");
+assert(finalPack.includes("https://github.com/RayWu1037/agentops-commander/issues/1"), "Final pack links final submission issue");
 assert(finalPack.includes("public YouTube or Vimeo URL"), "Final pack tracks the required public video URL");
 assert(finalPack.includes("Use English narration or English subtitles"), "Final pack tracks English video requirement");
 assert(finalPack.includes("Keep the video at or under 3 minutes"), "Final pack tracks video length requirement");
@@ -161,6 +163,7 @@ assert(checklist.includes("[x] Add final Devpost submission pack"), "Championshi
 assert(checklist.includes("[x] Add demo captions and video QA checklist"), "Championship checklist records video prep assets");
 assert(checklist.includes("[x] Confirm GitHub repo homepage and topics are set"), "Championship checklist records GitHub metadata verification");
 assert(checklist.includes("[x] Add hosted recording console for video capture"), "Championship checklist records recording console completion");
+assert(checklist.includes("[x] Create GitHub final submission checklist issue"), "Championship checklist records final issue creation");
 assert(checklist.includes("Record and upload public demo video"), "Championship checklist tracks demo video requirement");
 assert(agentConfig.agent.googleCloud.agentBuilder.includes("agent goal"), "Agent config defines Agent Builder contract");
 assert(agentConfig.agent.googleCloud.geminiModel.includes("gemini"), "Agent config selects a Gemini model target");

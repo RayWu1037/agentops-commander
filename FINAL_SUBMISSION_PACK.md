@@ -9,6 +9,7 @@ Use this file as the copy/paste source for the final Devpost submission.
 - Code repository: https://github.com/RayWu1037/agentops-commander
 - Demo video URL: `TODO: add public YouTube or Vimeo URL`
 - Partner track: Arize
+- Final external checklist issue: https://github.com/RayWu1037/agentops-commander/issues/1
 
 ## Project Name
 
@@ -66,6 +67,7 @@ The repository includes a concrete `agent-builder-config.json` contract for Gemi
 - Paste hosted demo URL: https://raywu1037.github.io/agentops-commander/
 - Paste code URL: https://github.com/RayWu1037/agentops-commander
 - Paste public video URL.
+- Update final checklist issue #1 after the video URL and Devpost fields are saved.
 - Upload `project-gallery.png` as the project gallery image.
 - Upload or verify English captions using `demo-captions.srt`.
 - Use the tagline, built-with list, and submission description above.
