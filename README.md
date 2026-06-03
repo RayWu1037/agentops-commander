@@ -1,5 +1,10 @@
 # AgentOps Commander
 
+[![CI](https://github.com/RayWu1037/agentops-commander/actions/workflows/ci.yml/badge.svg)](https://github.com/RayWu1037/agentops-commander/actions/workflows/ci.yml)
+[![Deploy Demo](https://github.com/RayWu1037/agentops-commander/actions/workflows/pages.yml/badge.svg)](https://github.com/RayWu1037/agentops-commander/actions/workflows/pages.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Hosted demo](https://img.shields.io/badge/demo-live-126a72.svg)](https://raywu1037.github.io/agentops-commander/)
+
 AgentOps Commander is a Gemini and Google Cloud Agent Builder-ready, human-supervised incident response agent demo for the Google Cloud Rapid Agent Hackathon.
 
 Repository: https://github.com/RayWu1037/agentops-commander
@@ -7,6 +12,17 @@ Repository: https://github.com/RayWu1037/agentops-commander
 Hosted demo: https://raywu1037.github.io/agentops-commander/
 
 Recording console: https://raywu1037.github.io/agentops-commander/recording.html
+
+## Final Submission Status
+
+| Item | Status | Evidence |
+| --- | --- | --- |
+| Public repository | Ready | MIT licensed GitHub repo |
+| Hosted demo | Ready | GitHub Pages with post-deploy smoke tests |
+| Partner track | Ready | Arize / Phoenix MCP |
+| Gemini + Agent Builder contract | Ready | `agent-builder-config.json` |
+| Demo video | Pending | Record with `public/recording.html`, upload to YouTube or Vimeo |
+| Devpost final submit | Pending | Paste final video URL into `FINAL_SUBMISSION_PACK.md` fields |
 
 ## Judge Quickstart
 
