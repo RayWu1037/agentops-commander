@@ -13,11 +13,14 @@ Hosted demo: https://raywu1037.github.io/agentops-commander/
 
 Recording console: https://raywu1037.github.io/agentops-commander/recording.html
 
+Submission release: https://github.com/RayWu1037/agentops-commander/releases/tag/v0.1.0-submission
+
 ## Final Submission Status
 
 | Item | Status | Evidence |
 | --- | --- | --- |
 | Public repository | Ready | MIT licensed GitHub repo |
+| Submission release | Ready | `v0.1.0-submission` |
 | Hosted demo | Ready | GitHub Pages with post-deploy smoke tests |
 | Partner track | Ready | Arize / Phoenix MCP |
 | Gemini + Agent Builder contract | Ready | `agent-builder-config.json` |

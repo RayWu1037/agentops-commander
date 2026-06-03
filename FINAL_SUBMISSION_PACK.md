@@ -7,6 +7,7 @@ Use this file as the copy/paste source for the final Devpost submission.
 - Hosted demo URL: https://raywu1037.github.io/agentops-commander/
 - Recording console: https://raywu1037.github.io/agentops-commander/recording.html
 - Code repository: https://github.com/RayWu1037/agentops-commander
+- Submission release: https://github.com/RayWu1037/agentops-commander/releases/tag/v0.1.0-submission
 - Demo video URL: `TODO: add public YouTube or Vimeo URL`
 - Partner track: Arize
 - Final external checklist issue: https://github.com/RayWu1037/agentops-commander/issues/1
@@ -74,5 +75,6 @@ The repository includes a concrete `agent-builder-config.json` contract for Gemi
 - If using Seedance-style AI clips, keep them as intro/transition/outro only; the main video must show the real hosted app.
 - Use the tagline, built-with list, and submission description above.
 - Verify the repository is public and has `LICENSE` visible.
+- Use release `v0.1.0-submission` as the stable judging snapshot if Devpost asks for a specific release or version.
 - Verify GitHub repository homepage points to the hosted demo and topics include `google-cloud`, `gemini`, `agent-builder`, `arize`, and `mcp`.
 - Run one final hosted smoke test after saving the Devpost draft.
