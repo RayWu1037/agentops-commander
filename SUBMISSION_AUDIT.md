@@ -16,7 +16,7 @@ Sources checked:
 - Hosted project URL: https://raywu1037.github.io/agentops-commander/
 - Public open-source repository: https://github.com/RayWu1037/agentops-commander
 - Open-source license: `LICENSE`
-- Demo video: pending final recording and upload.
+- Demo video: https://youtu.be/TrcCUcYIb6c
 - Submission form copy: `DEVPOST_SUBMISSION.md`
 - Final copy/paste package: `FINAL_SUBMISSION_PACK.md`
 - Judge follow-up answers: `JUDGE_QA.md`
@@ -60,6 +60,5 @@ Evidence:
 
 ## Remaining Final Submission Work
 
-- Record and upload the under-three-minute demo video.
 - Paste the hosted demo URL, code URL, video URL, selected Arize track, and `DEVPOST_SUBMISSION.md` copy into Devpost.
 - Do one last hosted-demo smoke test immediately before final submission.

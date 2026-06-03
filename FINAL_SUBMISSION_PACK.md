@@ -8,7 +8,7 @@ Use this file as the copy/paste source for the final Devpost submission.
 - Recording console: https://raywu1037.github.io/agentops-commander/recording.html
 - Code repository: https://github.com/RayWu1037/agentops-commander
 - Submission release: https://github.com/RayWu1037/agentops-commander/releases/tag/v0.1.0-submission
-- Demo video URL: `TODO: add public YouTube or Vimeo URL`
+- Demo video URL: https://youtu.be/TrcCUcYIb6c
 - Partner track: Arize
 - Final external checklist issue: https://github.com/RayWu1037/agentops-commander/issues/1
 - Optional AI video prompt pack: `SEEDANCE_DEMO_PROMPTS.md`
@@ -68,7 +68,7 @@ The repository includes a concrete `agent-builder-config.json` contract for Gemi
 - Select Partner track: Arize.
 - Paste hosted demo URL: https://raywu1037.github.io/agentops-commander/
 - Paste code URL: https://github.com/RayWu1037/agentops-commander
-- Paste public video URL.
+- Paste public video URL: https://youtu.be/TrcCUcYIb6c
 - Update final checklist issue #1 after the video URL and Devpost fields are saved.
 - Upload `project-gallery.png` as the project gallery image.
 - Upload or verify English captions using `demo-captions.srt`.

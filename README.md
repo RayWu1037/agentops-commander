@@ -25,8 +25,8 @@ Submission release: https://github.com/RayWu1037/agentops-commander/releases/tag
 | Partner track | Ready | Arize / Phoenix MCP |
 | Gemini + Agent Builder contract | Ready | `agent-builder-config.json` |
 | Final external tracker | Open | GitHub issue #1: https://github.com/RayWu1037/agentops-commander/issues/1 |
-| Demo video | Pending | Record with `public/recording.html`, upload to YouTube or Vimeo |
-| Devpost final submit | Pending | Paste final video URL into `FINAL_SUBMISSION_PACK.md` fields |
+| Demo video | Ready | https://youtu.be/TrcCUcYIb6c |
+| Devpost final submit | Pending | Paste the final video URL and project links into Devpost |
 
 ## Judge Quickstart
 

@@ -66,6 +66,6 @@ Only as intro, transition, or outro clips. The Devpost demo should mainly show t
 
 Only external actions remain:
 
-- Record and upload the public or unlisted YouTube/Vimeo demo video.
+- Demo video is uploaded: https://youtu.be/TrcCUcYIb6c
 - Paste the video URL into Devpost and issue #1.
 - Save or submit the final Devpost form.
