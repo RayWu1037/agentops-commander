@@ -18,6 +18,7 @@ This is the practical bar for turning AgentOps Commander from a strong prototype
 - [x] Add Agent Builder / Gemini / Arize MCP contract for judging
 - [x] Add requirement-to-evidence submission audit
 - [x] Add final Devpost submission pack
+- [x] Add demo captions and video QA checklist
 - [ ] Record and upload public demo video under 3 minutes
 - [ ] Add final hosted demo URL and video URL to Devpost
 

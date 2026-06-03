@@ -53,6 +53,7 @@ The repository includes a concrete `agent-builder-config.json` contract for Gemi
 - Upload to YouTube or Vimeo.
 - Make the video publicly visible.
 - Use English narration or English subtitles.
+- Upload `demo-captions.srt` if the video platform supports caption files.
 - Show the project functioning on the web platform.
 - Avoid third-party logos, trademarks, ads, personal information, or copyrighted media not owned by the team.
 - Use the hosted demo URL, not only local files, during the recording.
@@ -64,6 +65,7 @@ The repository includes a concrete `agent-builder-config.json` contract for Gemi
 - Paste code URL: https://github.com/RayWu1037/agentops-commander
 - Paste public video URL.
 - Upload `project-gallery.png` as the project gallery image.
+- Upload or verify English captions using `demo-captions.srt`.
 - Use the tagline, built-with list, and submission description above.
 - Verify the repository is public and has `LICENSE` visible.
 - Run one final hosted smoke test after saving the Devpost draft.

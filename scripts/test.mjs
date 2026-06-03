@@ -55,6 +55,8 @@ const readme = await readFile(join(root, "README.md"), "utf8");
 const devpost = await readFile(join(root, "DEVPOST_SUBMISSION.md"), "utf8");
 const demoScript = await readFile(join(root, "DEMO_SCRIPT.md"), "utf8");
 const finalPack = await readFile(join(root, "FINAL_SUBMISSION_PACK.md"), "utf8");
+const captions = await readFile(join(root, "demo-captions.srt"), "utf8");
+const videoQa = await readFile(join(root, "VIDEO_QA_CHECKLIST.md"), "utf8");
 const gitignore = await readFile(join(root, ".gitignore"), "utf8");
 const strategy = await readFile(join(root, "TEST_STRATEGY.md"), "utf8");
 const ciWorkflow = await readFile(join(root, ".github", "workflows", "ci.yml"), "utf8");
@@ -96,6 +98,8 @@ assert(readme.includes("Offline demo mode"), "README documents offline demo mode
 assert(readme.includes("https://github.com/RayWu1037/agentops-commander"), "README links the public repository");
 assert(readme.includes("Hosted demo: https://raywu1037.github.io/agentops-commander/"), "README includes hosted demo URL");
 assert(readme.includes("FINAL_SUBMISSION_PACK.md"), "README documents the final submission pack");
+assert(readme.includes("demo-captions.srt"), "README documents demo captions");
+assert(readme.includes("VIDEO_QA_CHECKLIST.md"), "README documents video QA checklist");
 assert(devpost.includes("Arize Phoenix"), "Devpost copy emphasizes Arize Phoenix");
 assert(devpost.includes("Gemini"), "Devpost copy emphasizes Gemini");
 assert(devpost.includes("Google Cloud Agent Builder"), "Devpost copy emphasizes Google Cloud Agent Builder");
@@ -109,6 +113,14 @@ assert(finalPack.includes("https://github.com/RayWu1037/agentops-commander"), "F
 assert(finalPack.includes("public YouTube or Vimeo URL"), "Final pack tracks the required public video URL");
 assert(finalPack.includes("Use English narration or English subtitles"), "Final pack tracks English video requirement");
 assert(finalPack.includes("Keep the video at or under 3 minutes"), "Final pack tracks video length requirement");
+assert(finalPack.includes("demo-captions.srt"), "Final pack references the caption file");
+assert(captions.includes("00:00:00,000 --> 00:00:08,000"), "Caption file uses SRT timestamps");
+assert(captions.includes("Gemini and Google Cloud Agent Builder"), "Caption file mentions Gemini and Agent Builder");
+assert(captions.includes("Arize Phoenix and Phoenix MCP"), "Caption file mentions Arize Phoenix MCP");
+assert(captions.includes("00:02:54,000 --> 00:03:00,000"), "Caption file stays within the three-minute limit");
+assert(videoQa.includes("Target length: 2:45 to 2:58"), "Video QA checklist defines target duration");
+assert(videoQa.includes("Architecture tab"), "Video QA checklist requires Architecture tab shot");
+assert(videoQa.includes("YouTube or Vimeo"), "Video QA checklist tracks required upload platforms");
 assert(strategy.includes("OWASP"), "Test strategy references OWASP security testing");
 assert(strategy.includes("WCAG 2.2"), "Test strategy references WCAG accessibility testing");
 assert(ciWorkflow.includes("node scripts/test.mjs"), "CI workflow runs regression tests");
@@ -116,6 +128,7 @@ assert(pagesWorkflow.includes("actions/deploy-pages"), "Pages workflow deploys t
 assert(pagesWorkflow.includes("enablement: true"), "Pages workflow can enable GitHub Pages on first deploy");
 assert(checklist.includes("[x] Confirm GitHub Pages is enabled"), "Championship checklist records hosted demo verification");
 assert(checklist.includes("[x] Add final Devpost submission pack"), "Championship checklist records final pack completion");
+assert(checklist.includes("[x] Add demo captions and video QA checklist"), "Championship checklist records video prep assets");
 assert(checklist.includes("Record and upload public demo video"), "Championship checklist tracks demo video requirement");
 assert(agentConfig.agent.googleCloud.agentBuilder.includes("agent goal"), "Agent config defines Agent Builder contract");
 assert(agentConfig.agent.googleCloud.geminiModel.includes("gemini"), "Agent config selects a Gemini model target");
@@ -193,6 +206,8 @@ for (const required of [
   "LICENSE",
   "Dockerfile",
   "DEMO_SCRIPT.md",
+  "demo-captions.srt",
+  "VIDEO_QA_CHECKLIST.md",
   "DEVPOST_SUBMISSION.md",
   "FINAL_SUBMISSION_PACK.md",
   "SUBMISSION_AUDIT.md",
